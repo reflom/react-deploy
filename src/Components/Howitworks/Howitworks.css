@@ -1,0 +1,6 @@
+#content-wrapper {
+	position:absolute;
+	z-index:1 !important;
+	min-width:100%;
+	min-height:100%;
+}

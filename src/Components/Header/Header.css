@@ -1,0 +1,45 @@
+@media screen and (max-width: 375px) {
+    .head{
+    
+        margin-left: 0px!important;
+    }
+    
+    .searchbar{
+        margin-left: 0px!important;
+    }
+
+    .navicons{
+        justify-content: start;
+       
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .head{
+    
+        margin-left: 0px!important;
+    }
+    
+    .searchbar{
+        margin: auto !important;
+    }
+}
+
+#carticon :hover{
+    
+color: #eb8025;
+}
+
+
+
+ #accounticon :hover{
+ color: #eb8025;
+ }
+
+ #searchicon :hover{
+    color: #eb8025;
+
+    }
+
+
+   
