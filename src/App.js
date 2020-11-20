@@ -2,7 +2,10 @@ import React from 'react';
 import Signin from './Components/Signin/Signin';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { Route, Router, BrowserRouter,Switch } from 'react-router-dom';
-
+import {
+    TransitionGroup,
+    CSSTransition
+} from "react-transition-group";
 import Signup from './Components/Signup/Signup';
 import Location from './Components/Location/Location';
 import Footer from './Components/Footer/Footer';
@@ -59,6 +62,12 @@ import Checkoutpage from './Components/Homes/Checkoutpage';
 const App = () => {
     return (
         <>
+            <TransitionGroup>
+                <CSSTransition
+                    
+                    classNames="fade"
+                    timeout={300}
+                >
             <Switch>
 
                 {/* <Route exact path='/' render={App}/> */}
@@ -115,8 +124,8 @@ const App = () => {
                 <Route exact path='/viewproducts' render={Viewproducts} />
             
             </Switch>
-
-
+</CSSTransition>
+        </TransitionGroup>
 
         </>
     )

@@ -91,72 +91,26 @@ export default function Notification() {
                                     <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown} >
                                         <MenuItem onClick={handleClose} style={{padding:'1px'}}>
                                                
-                                                    <Card style={{height:'100px'}}>
-                                                     
-                                                        <Card.Body>
-                                                            <Card.Title>Secondary Card Title</Card.Title>
-                                                                <Card.Text>
-                                                                    Some quick example text to build on the card title and make up the bulk
-                                                                    of the card's content.
-                                                                </Card.Text>
-                                                        </Card.Body>
-                                                    </Card>
+                                                Notification 1
 
                                                
                                         </MenuItem>
 
-                                            <MenuItem onClick={handleClose} style={{ padding: '1px' }}>
-                                                <Card style={{ height: '100px' }}>
-
-                                                    <Card.Body>
-                                                        <Card.Title>Secondary Card Title</Card.Title>
-                                                        <Card.Text>
-                                                            Some quick example text to build on the card title and make up the bulk
-                                                            of the card's content.
-                                                                </Card.Text>
-                                                    </Card.Body>
-                                                </Card>
+                                            <MenuItem onClick={handleClose} style={{ padding: '1px' ,alignItems:'center'}}>
+                                               notification  2
                                         
                                         </MenuItem>
-                                            <MenuItem onClick={handleClose} style={{ padding: '1px' }}>
-                                                <Card style={{ height: '100px' }}>
-
-                                                    <Card.Body>
-                                                        <Card.Title>Secondary Card Title</Card.Title>
-                                                        <Card.Text>
-                                                            Some quick example text to build on the card title and make up the bulk
-                                                            of the card's content.
-                                                                </Card.Text>
-                                                    </Card.Body>
-                                                </Card>
-
+                                            <MenuItem  className="text-center"  onClick={handleClose} style={{ padding: '20px'  }}>
+                                                Notification 4
                                         </MenuItem>
 
-                                            <MenuItem onClick={handleClose} style={{ padding: '1px' }}>
-                                                <Card style={{ height: '100px' }}>
-
-                                                    <Card.Body>
-                                                        <Card.Title>Secondary Card Title</Card.Title>
-                                                        <Card.Text>
-                                                            Some quick example text to build on the card title and make up the bulk
-                                                            of the card's content.
-                                                                </Card.Text>
-                                                    </Card.Body>
-                                                </Card>
+                                            <MenuItem onClick={handleClose} style={{ padding: '20px'}}>
+                                               
 
                                             </MenuItem>
 
-                                            <MenuItem onClick={handleClose} style={{ padding: '1px' }}>
-                                                <Card style={{ height: '100px' }}>
-
-                                                    <Card.Body>
-                                                        <Card.Title>Secondary Card Title</Card.Title>
-                                                        <Card.Text>
-                                                            Some quick example text to build on the card title and make up the bulk
-                                                            of the card's content.
-                                                                </Card.Text>
-                                                    </Card.Body>
-                                                </Card>
+                                            <MenuItem onClick={handleClose} style={{ padding: '20px'}}>
+                                               
 
                                             </MenuItem>
 
