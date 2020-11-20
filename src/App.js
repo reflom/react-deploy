@@ -57,11 +57,13 @@ import Signin1 from './Components/Signin/Signin1';
 import Root from './Components/Homes/Root';
 import { Redirect } from "react-router-dom";
 import Checkoutpage from './Components/Homes/Checkoutpage';
-
+import { Router, BrowserRouter } from 'react-router-dom';
+import history from './history';
 
 const App = () => {
     return (
         <>
+        <BrowserRouter basename={window.location.pathname || ''} history={history}>
             <TransitionGroup>
                 <CSSTransition
                     
@@ -126,7 +128,7 @@ const App = () => {
             </Switch>
 </CSSTransition>
         </TransitionGroup>
-
+</BrowserRouter>
         </>
     )
 }
