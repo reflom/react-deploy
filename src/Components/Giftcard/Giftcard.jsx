@@ -51,7 +51,7 @@ const Giftcard=()=>{
                             
                             
                         </div>
-                        <button className='mt-4 ui inverted green button medium  right floated m-3'>Add Card</button>
+                        <button className='mt-4 ui  green button medium  right floated m-3'>Add Card</button>
 
                         <div style={{marginTop:'70px'}}>
                             <form class="ui form">
@@ -85,7 +85,7 @@ const Giftcard=()=>{
 
                     </form>
 
-                    <button class='mt-4 ui inverted green button medium  right floated mt-3'>Purchase $125 Gift Card</button>
+                    <button class='mt-4 ui  green button medium  right floated mt-3'>Purchase $125 Gift Card</button>
                    
                     </div>
                         

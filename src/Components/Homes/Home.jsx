@@ -17,9 +17,6 @@ const Home=()=>{
     return (
     <>
         <Header/>
-        
-      
-      
         <LocationBanner/>
         <Howitworks/>
         <Categoriesslider/>

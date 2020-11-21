@@ -173,10 +173,8 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import Badge from '@material-ui/core/Badge';
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
 import IconButton from '@material-ui/core/IconButton';
-import Grow from '@material-ui/core/Grow';
-import Paper from '@material-ui/core/Paper';
-import Popper from '@material-ui/core/Popper';
 import Notification from './Notification';
+import history from '../../history';
 class Header extends React.Component{
 
   constructor(props){
@@ -198,11 +196,15 @@ class Header extends React.Component{
   //   window.location.replace("http://localhost:3000/checkoutpage");
   // }
 
+  
+
 
 
   render(){
     return(
       <>
+
+
 
         <Navbar style={{ backgroundColor: '#F5F5F5' }} expand='lg' style={{ height: '84px' }}  >
             <NavbarBrand className=" head brand m-4 col-md-2"  style={{fontSize:'40px',fontFamily:'work sans'}}><strong>Smart Shop</strong></NavbarBrand>
@@ -483,11 +485,11 @@ class Header extends React.Component{
 
             
 
-          <button className="btn peach-gradient p-3" >Go to Checkout <ShoppingCartIcon /><span style={{ float: 'right' }}><h3>$25.6</h3></span></button>
-              {/* onClick={this.gotoCheckout()} */}
-         
+<button className="btn peach-gradient p-3"  ><Link to='/checkoutpage' style={{color:'none'}}>Go to Checkout <ShoppingCartIcon /></Link><span style={{ float: 'right' }}><h3>$25.6</h3></span></button>
+             
+            
           </MDBModal>
-          
+             
 
       </>
     );
@@ -495,6 +497,156 @@ class Header extends React.Component{
 }
 
 export default Header;
+
+// import React,{useState} from 'react';
+// import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+// import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
+// import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+// import Navbar from 'react-bootstrap/Navbar';
+// import NavbarBrand from 'react-bootstrap/NavbarBrand';
+// import { Nav } from 'react-bootstrap';
+// import NavItem from 'react-bootstrap/NavItem';
+// import  MenuItem from '@material-ui/core/MenuItem';
+// import  {Link,useHistory} from 'react-router-dom';
+// import './Header.css';
+// import Button from '@material-ui/core/Button';
+// import DropdownButton from 'react-bootstrap/DropdownButton';
+// import Dropdown from 'react-bootstrap/Dropdown';
+// import Badge from '@material-ui/core/Badge';
+// import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
+// import IconButton from '@material-ui/core/IconButton';
+// import Notification from './Notification';
+
+// const Header=()=>{
+
+//   const history = useHistory();
+//   // const [modal8 ,setState]=useState(false);
+//   // const [modal9,setState]=useState(false);
+
+//   return(
+//     <>
+    
+//          <Navbar style={{ backgroundColor: '#F5F5F5' }} expand='lg' style={{ height: '84px' }}  >
+//              <NavbarBrand className=" head brand m-4 col-md-2"  style={{fontSize:'40px',fontFamily:'work sans'}}><strong>Smart Shop</strong></NavbarBrand>
+
+//                {/* <NavItem className="searchbar" style={{marginLeft:'100px'}} >
+
+//               <InputBase
+//              placeholder="Search for Stores.."
+//              className="text-center pl-2 "   
+//              style={{width:'300px'}} 
+//              startAdornment=
+//              {<InputAdornment position="start">
+//              <SearchIcon id="searchicon"/>
+//              </InputAdornment>}
+//               style={{border:'2px solid #eb8025',borderRadius:'8px'}}                                   
+//              />
+
+//              </NavItem>  */}
+
+//               <NavItem className="searchbar flui justify-content-between col-md-6"  >
+
+//               <div className="ui large search" >
+//                  <div class="ui icon input" style={{width:'100%'}} >
+//                    <input className="prompt" type="text" placeholder="Search Products.." style={{width:'100% !important'}}/>
+//                    <i className="search icon"></i>
+//                  </div>
+//                  <div className="results"></div>
+//                </div>
+//              </NavItem>
+
+
+
+
+//              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+//              <Navbar.Collapse id="basic-navbar-nav" >
+
+
+
+
+
+
+
+
+//       <div className="navbar-collapse navicons justify-content-end col-md-12" style={{display:'flex'}}>
+
+//       <div  id="bellicon"style={{color:'black'}}>
+//                  <Notification/>
+//       </div>
+
+
+
+//            <Nav.Link className="mr-4">
+//            <div class="ui large compact menu" style={{border:'none'}}>
+//              <div class="ui simple dropdown item" >
+//                Hii Rini
+//                <i class="dropdown icon"></i>
+//                <div class="menu ">
+
+//                    <div class="item">
+
+//                      <Link to='/accountsection'  style={{color:"inherit"}}><strong>My Account</strong></Link>
+//                    </div>
+
+//                    <div class="item">
+
+//                      <Link to='/orderspage'  style={{color:"inherit"}}><strong>My Orders</strong></Link>
+//                    </div>
+
+
+//                    <div class="item">
+
+//                        <Link to='/addresspage'  style={{color:"inherit"}}><strong>Manage Address</strong></Link>
+//                    </div>
+
+//                    <div class="item">
+
+//                        <Link to='/'  style={{color:"inherit"}}><strong>Notification</strong></Link>
+//                    </div>
+
+//                    <div class="item">
+
+//                        <Link to='/referfriend'  style={{color:"inherit"}}><strong>Refer Friends</strong></Link>
+//                    </div>
+//                    <div class="divider"></div>
+//                    <div class="item">
+//                        <div class="ui "></div>
+//                        <Link to='/' style={{color:"inherit"}}><strong>Logout</strong></Link>
+//                    </div>
+//                </div>
+//              </div>
+//            </div>
+
+//            </Nav.Link >
+
+//            <div id="carticon" style={{color:'black'}} className="mr-5">
+
+//                  <button class="circular ui icon button" style={{ backgroundColor: 'transparent' }} onClick={this.toggle(8)}>
+//                <Badge badgeContent={6} color="error">
+//                  <ShoppingCartIcon fontSize='large' />
+//                </Badge>
+//                </button>
+
+
+//              </div>
+
+
+
+//        </div>
+
+
+
+//              </Navbar.Collapse>
+
+
+//          </Navbar>
+
+
+//     </>
+//   );
+
+// }
+// export default Header;
 
 
 
