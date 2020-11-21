@@ -301,7 +301,7 @@ function facebookSignin(res)
         
          setFacebookData({ facebookData: response });
          console.log(facebookData);
-         history.push('/home');
+         history.replace('/home');
          
   
          })
