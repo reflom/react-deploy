@@ -557,8 +557,9 @@ import './Signin.css';
 const Signin=()=>{
 
   const history = useHistory();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
+  cont [profileData,setProfileData]-useState([]);
   const [googleData, setgoogleData] = useState([]);
   const [facebookData , setFacebookData]=useState([]);
 
@@ -567,42 +568,12 @@ const Signin=()=>{
 function handleSubmit(e){
   
       e.preventDefault()
-      var axios = require('axios');
-     var FormData = require('form-data');
-     var data = new FormData();
-     data.append('email', email);
-     data.append('password', password);
-
-     var config = {
-       method: 'post',
-       url: 'https://shopsmartcart.reflomsolutions.com/public/api/login',
-       headers: {
-         "Content-Type": "application/json"
-       },
-       data: data
-     };
-
-     axios(config)
-       .then(function (response) {
-
-         // console.log(JSON.stringify(response.data));
-        if(response.status =='200'){
-              console.log(response);
-              
-              alert("login successful ");
-              history.push('/home');
-             
-
-        }else if(response.status =='400'){
-              alert("Please Register !!")
-        }
-        
-
-       })
-
-       .catch(function (error) {
-         console.log(error);
-       });
+      axios.get(`https://shopsmartcart.reflomsolutions.com/public/api/login`)
+      .then(res => {
+        const persons = res.data;
+        setProfileData(persons);
+      })
+     
 }
 
 
@@ -668,7 +639,7 @@ function googleSignin(res) {
 
 
 
-     
+
    
 
 

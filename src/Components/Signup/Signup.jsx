@@ -232,7 +232,7 @@ const Signup=()=>{
 function handleSubmit(e){
 
   if(password != c_password){
-    
+
     e.preventDefault();
     alert("Password does not match");
 
@@ -288,7 +288,7 @@ function facebookSignin(res)
   
        }
   
-     axios.post('https://shopsmartcart.reflomsolutions.com/public/api/login', responseFacebook)
+     axios.post('https://shopsmartcart.reflomsolutions.com/public/api/register', responseFacebook)
          .then((result) => {
            let responseJson = result;
            console.log(result.data.name);
@@ -317,7 +317,7 @@ function googleSignin(res) {
   
        };
   
-       axios.post('https://shopsmartcart.reflomsolutions.com/public/api/login', googleresponse).then((result) => {
+       axios.post('https://shopsmartcart.reflomsolutions.com/public/api/register', googleresponse).then((result) => {
   
          let responseJson = result;
   
