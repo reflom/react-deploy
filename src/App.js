@@ -57,12 +57,14 @@ import Signin1 from './Components/Signin/Signin1';
 import Root from './Components/Homes/Root';
 import { Redirect } from "react-router-dom";
 import Checkoutpage from './Components/Homes/Checkoutpage';
-
+import {connect} from 'react-redux';
 import history from './history';
+
 
 const App = () => {
     return (
         <>
+      
         <BrowserRouter basename={window.location.pathname || ''} history={history}>
             <TransitionGroup>
                 <CSSTransition
@@ -132,4 +134,25 @@ const App = () => {
         </>
     )
 }
-export default App;
+
+
+
+const mapStateToProps =(state)=>{
+    return{
+    
+    }
+  }
+  
+  const mapDispatchProps =(dispatch,ownProps)=>{
+    const { index } = ownProps;
+    return{
+    //   changeName:(name)=>{dispatch({type:'CHANGE_NAME',payload:name})}
+    
+    getByIndex: index => dispatch({ type: "GET_BY_INDEX", index })
+    }
+  }
+
+ 
+
+
+export default connect(mapStateToProps,mapDispatchProps)(App);

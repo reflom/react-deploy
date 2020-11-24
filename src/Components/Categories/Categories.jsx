@@ -268,11 +268,24 @@
 // }
 // export default Categories;
 
-import React from 'react';
+import React ,{useState} from 'react';
 import { Link } from 'react-router-dom';
-
+import axios from 'axios';
 
 const Categories = () => {
+
+      cont [storeData,setstoreData]=useState([]);
+
+      const axios=require('axios');
+   
+   axios.get("https://shopsmartcart.reflomsolutions.com/public/api_store").then(res =>{
+      setstoreData({storeData : res.data});
+      console.log(storeData);
+   })
+      
+
+
+
         return (
                 <React.Fragment>
                         <div className="container-fluid">

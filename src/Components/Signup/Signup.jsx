@@ -217,6 +217,8 @@ import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
 import axios from 'axios';
 import Alert from 'react-bootstrap/Alert';
+import {connect} from 'react-redux';
+
 const Signup=()=>{
 
   const history = useHistory();
@@ -276,15 +278,22 @@ function handleSubmit(e){
 }
 
 
+function RegisteredName(){
+  
+return(name);
+}
+
+
 function facebookSignin(res) 
 {
  
       
   const responseFacebook = {
-         name: res.name,
-         email: res.email,
-         token: res.facebookID,
-         ProviderId: 'Facebook'
+        name: res.name,
+        email: res.email,
+        provider: res.graphDomain,
+        provider_id :res.userID,
+        remember_token: res.accessToken
   
        }
   
@@ -292,7 +301,8 @@ function facebookSignin(res)
          .then((result) => {
            let responseJson = result;
            console.log(result.data.name);
-           alert("data");
+           alert("Signup Success !");
+           history.replace('/home');
            sessionStorage.setItem("userData", JSON.stringify(result));
   
   
@@ -301,7 +311,7 @@ function facebookSignin(res)
         
          setFacebookData({ facebookData: response });
          console.log(facebookData);
-         history.replace('/home');
+         
          
   
          })
@@ -310,10 +320,10 @@ function facebookSignin(res)
 
 function googleSignin(res) {
        const googleresponse = {
-         Name: res.profileObj.name,
-         email: res.profileObj.email,
-         token: res.googleId,
-         ProviderId: 'Google'
+        name: res.profileObj.name,
+        email: res.profileObj.email,
+        provider:'google',
+        provider_id :res.googleId
   
        };
   
@@ -488,4 +498,18 @@ const responseGoogle = (response) => {
 
 
 }
-export default Signup;
+
+const mapDispatchProps =dispatch=>{
+
+  return{
+    
+    // changeName:(name)=>{dispatch({type:'CHANGE_NAME',payload:name})}
+   
+    // handleSubmit:()=>{dispatch({type:'sending name from signup',payload:state.name})}
+    
+    registerName:()=>{dispatch({type:'Register_name',payload:name})}
+
+  }
+}
+
+export default connect(null,mapDispatchProps)(Signup);

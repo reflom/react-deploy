@@ -13,6 +13,7 @@ import Signin from '../Signin/Signin';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField'
 import Axios from 'axios';
+import {connect} from 'react-redux';
 // import { MDBAutocomplete}  from "mdbreact";
 
 
@@ -28,7 +29,7 @@ class LocationBanner extends React.Component {
     }
   }
 
-  
+
 
 
 
@@ -49,8 +50,8 @@ class LocationBanner extends React.Component {
   }
 
 
- 
-  
+
+
 
 
 
@@ -59,9 +60,9 @@ class LocationBanner extends React.Component {
 
 
 
-   
-   
-    
+
+
+
 
     return (
       <>
@@ -85,7 +86,7 @@ class LocationBanner extends React.Component {
 
                       <div class="card-body z-depth-2 px-5">
                         <h2 className=" m-3 " > Groceries to your Door Step</h2>
-                      
+
 
                         <form >
                                 {/* <OutlinedInput
@@ -99,23 +100,23 @@ class LocationBanner extends React.Component {
                                   autoComplete="address"
                           /> */}
 
-                          
 
-                       
+
+
 
                           <Autocomplete
                             id="combo-box-demo"
                             options={this.state.citys}
-                           
+
                             getOptionLabel={option => option.city_name}
                             renderInput={(params) =>
-                            
+
                              <TextField
 
                                 {...params}
                                 fullWidth
                                 placeholder="Enter Your City"
-                                
+
                                 variant="outlined"
                                 // onChange={(event, newValue) => this.setState({ location: newValue })}
 
@@ -123,7 +124,7 @@ class LocationBanner extends React.Component {
                               />}
                           />
 
-                        
+
 
 
 
@@ -163,4 +164,13 @@ class LocationBanner extends React.Component {
 
 
 }
-export default LocationBanner;
+
+const mapDispatchProps =(dispatch)=>{
+
+  return{
+    changeName:(name)=>{dispatch({type:'CHANGE_NAME',payload:name})}
+  }
+}
+
+
+export default connect(null,mapDispatchProps)(LocationBanner);

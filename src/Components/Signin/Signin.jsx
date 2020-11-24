@@ -554,8 +554,9 @@ import './Signin.css';
 
 
 
-const Signin=()=>{
 
+const Signin=()=>{
+  
   const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -566,7 +567,13 @@ const Signin=()=>{
 
 function handleSubmit(e){
   
+ 
+
+  
       e.preventDefault()
+
+
+      app.use(cors());
       var axios = require('axios');
      var FormData = require('form-data');
      var data = new FormData();
@@ -609,20 +616,22 @@ function handleSubmit(e){
 
 function facebookSignin(res) 
 {
-      
+
   const responseFacebook = {
-         name: res.name,
-         email: res.email,
-         token: res.facebookID,
-         ProviderId: 'Facebook'
-  
+        name: res.name,
+        email: res.email,
+        provider: res.graphDomain,
+        provider_id :res.userID,
+        remember_token: res.accessToken
+        //  token: res.facebookID,
        }
   
-     axios.post('https://shopsmartcart.reflomsolutions.com/public/api/login', responseFacebook)
+     axios.post('https://shopsmartcart.reflomsolutions.com/public/api/register', responseFacebook)
          .then((result) => {
            let responseJson = result;
            console.log(result.data.name);
-           alert("data");
+           alert("login Successfull");
+           history.replace('/home');
            sessionStorage.setItem("userData", JSON.stringify(result));
   
   
@@ -630,8 +639,9 @@ function facebookSignin(res)
   
         
          setFacebookData({ facebookData: response });
+        
          console.log(facebookData);
-         history.replace('/home');
+        
          
   
          })
@@ -640,12 +650,13 @@ function facebookSignin(res)
 
 function googleSignin(res) {
        const googleresponse = {
-         Name: res.profileObj.name,
+         name: res.profileObj.name,
          email: res.profileObj.email,
-         token: res.googleId,
-         ProviderId: 'Google'
-  
-       };
+         provider:'google',
+         provider_id :res.googleId
+        
+
+};
   
        axios.post('https://shopsmartcart.reflomsolutions.com/public/api/login', googleresponse).then((result) => {
   
