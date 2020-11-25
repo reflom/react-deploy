@@ -19,10 +19,7 @@ const Dashboard =()=>{
         
         <Storeinformation/>
       
-        <Categories
-            
-
-        />
+        <Categories/>
          <hr/>   
         <Howitworks2/>
         <hr/>

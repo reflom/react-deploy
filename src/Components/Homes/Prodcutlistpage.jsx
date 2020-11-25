@@ -18,11 +18,7 @@ const Productlistpage=()=>{
                 <Storeinfoheader2/>
                 
                 <hr/>
-                <Viewproducts
-
-
-
-                />
+                <Viewproducts/>
                 <hr/>
                 <Frequent/>
                 <hr/>

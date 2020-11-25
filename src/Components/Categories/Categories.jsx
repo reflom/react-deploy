@@ -385,6 +385,14 @@ class Categories extends React.Component{
 
         }
 
+
+        componentWillUnmount() {
+                // fix Warning: Can't perform a React state update on an unmounted component
+                this.setState = (state,callback)=>{
+                    return;
+                };
+            }
+
      
 
         render(){
@@ -394,14 +402,16 @@ class Categories extends React.Component{
                         <>
 
                         <div className="container-fluid">
-                                                <h1 > YOUR STORES</h1>
+                                                {/* <span className="text-center"> */}
+                                                        <h1 > STORES</h1>
+                                                {/* </span> */}
                                 <div className="row mt-5 mb-5" >
                                        
                                         <br/>
 
                                         {this.state.storeData.map((dynamicData,index)=>
                                          
-                                        <div className="col-sm-3" >
+                                        <div className="col-sm-3" key={index}>
                                                 
                                         
                                                 <div className="card collection-card z-depth-1-half" style={{ border: 'none', borderRadius: '20px' }} >
