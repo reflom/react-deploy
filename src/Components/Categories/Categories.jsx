@@ -268,295 +268,176 @@
 // }
 // export default Categories;
 
-import React ,{useState} from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+// import React ,{useState,useEffect} from 'react';
+// import { Link } from 'react-router-dom';
+// import axios from 'axios';
 
-const Categories = () => {
+// const Categories = () => {
 
-      cont [storeData,setstoreData]=useState([]);
+//       const [storeData,setstoreData]=useState([]);
 
-      const axios=require('axios');
+//       const axios=require('axios');
    
-   axios.get("https://shopsmartcart.reflomsolutions.com/public/api_store").then(res =>{
-      setstoreData({storeData : res.data});
-      console.log(storeData);
-   })
+   
+
+//    useEffect(() => {
+//         axios.get("https://shopsmartcart.reflomsolutions.com/public/api_store").then(res =>{
+      
+//                 setstoreData({storeData : res.data});
+               
+// })
+//     },[]);
+//     console.log('storeData',storeData);
+
+
+
       
 
 
 
-        return (
-                <React.Fragment>
+//         return (
+
+
+//                 <React.Fragment>
+
+
+               
+
+                 
+
+//                   <div className="container-fluid">
+
+                        
+//                                 <div className="row mt-5 mb-5" >
+                                 
+//                                 {storeData.map((item,index)=>{
+//                                         return(
+                                           
+
+//                                         <div className="col-sm-3" >
+//                                                 <h1>Your Stores</h1>
+                                               
+
+                                                
+
+//                                                 <div className="card collection-card z-depth-1-half" style={{ border: 'none', borderRadius: '20px' }}>
+
+//                                                         <div className="view zoom" style={{ borderRadius: '20px' }}>
+//                                                                 <Link to='/storedashboard'>
+//                                                                         <img src="" class="img-fluid"
+//                                                                                 alt="" />
+//                                                                 </Link>
+//                                                         </div>
+
+//                                                 </div>
+//                                                 <div className="m-3" style={{ textAlign: 'left' }}>
+//                                                         <strong style={{ fontSize: '20px' }}>Wallmart</strong>
+//                                                 </div>
+                                       
+
+//                                         </div>
+
+                                         
+//                                         )
+//                                 })} 
+
+
+
+//                                 </div>
+
+                                        
+                               
+
+//                         </div>
+                     
+            
+//                         <hr />
+                        
+
+                   
+//                 </React.Fragment>
+//         );
+// }
+// export default Categories;
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+
+class Categories extends React.Component{
+        constructor(props){
+                super(props)
+                this.state={
+                        storeData:[]
+                }
+        }
+
+
+        componentDidMount(){
+                const axios=require("axios");
+                axios.get("https://shopsmartcart.reflomsolutions.com/public/api_store")
+                .then(res =>{
+                                this.setState({storeData : res.data});
+                                       
+                        });
+
+                        
+
+        }
+
+     
+
+        render(){
+
+                console.log(this.state.storeData);
+                return(
+                        <>
+
                         <div className="container-fluid">
+                                                <h1 > YOUR STORES</h1>
+                                <div className="row mt-5 mb-5" >
+                                       
+                                        <br/>
 
-                                <div className="row mt-5 mb-5">
-
-
-                                        <div className="col-sm-3">
-                                                <h1>Your Stores</h1>
-
-                                                <div className="card collection-card z-depth-1-half" style={{ border: 'none', borderRadius: '20px' }}>
-
-                                                        <div className="view zoom" style={{ borderRadius: '20px' }}>
-                                                                <Link to='/storedashboard'>
-                                                                        <img src="http://shopsmartcart.reflomsolutions.com/webimg/storeimage9.jpg" class="img-fluid"
-                                                                                alt="" />
-                                                                </Link>
-                                                        </div>
-
-                                                </div>
-                                                <div className="m-3" style={{ textAlign: 'left' }}>
-                                                        <strong style={{ fontSize: '20px' }}>WALMART</strong>
-                                                </div>
-
-                                        </div>
-
-
-
-                                </div>
-
-
-                        </div>
-                        <hr />
-
-                        <div className="container-fluid">
-                                <section class="dark-grey-text text-center">
-                                        <h1>Big-selection Stores</h1>
-                                        <div className="row mt-5 mb-5">
-
-
-                                                <div className="col-sm-3">
-
-                                                        <div className="card collection-card z-depth-1-half" style={{ border: 'none', borderRadius: '20px' }}>
-                                                                <div className="view zoom" style={{ borderRadius: '20px' }}>
-                                                                        <Link>
-                                                                                <div style={{ width: "304px", height: '160px' }}>
-                                                                                        <img src="http://shopsmartcart.reflomsolutions.com/webimg/storeimage20.jpg" class="img-fluid"
-                                                                                                alt="" />
-                                                                                </div>
-                                                                        </Link>
-                                                                </div>
-                                                        </div>
-                                                        <div className="m-3" style={{ textAlign: 'left' }}>
-                                                                <strong style={{ fontSize: '20px' }}>99 Ranch Market</strong>
-                                                        </div>
-                                                </div>
-
-                                                <div className="col-sm-3">
-                                                        <div className="card collection-card z-depth-1-half" style={{ border: 'none', borderRadius: '20px' }}>
-                                                                <div className="view zoom" style={{ borderRadius: '20px' }}>
+                                        {this.state.storeData.map((dynamicData,index)=>
+                                         
+                                        <div className="col-sm-3" >
+                                                
+                                        
+                                                <div className="card collection-card z-depth-1-half" style={{ border: 'none', borderRadius: '20px' }} >
+                                                       
+                                                       <div className="view zoom" style={{ borderRadius: '20px' }}> 
+                                                                <div style={{ width: "304px", height: '160px' }}>
                                                                         <Link to='/storedashboard'>
-                                                                                <div style={{ width: "304px", height: '160px' }}>
-                                                                                        <img src="http://shopsmartcart.reflomsolutions.com/webimg/storeimage9.jpg" class="img-fluid"
-                                                                                                alt="" />
-                                                                                </div>
+                                                                        {/* <img src={dynamicData.store_image} class="img-fluid" alt="" /> */}
+
+                                                                        <img src={`https://shopsmartcart.reflomsolutions.com/public/storeimage/`+dynamicData.store_image} className="img-fluid " alt="store image" />
+                                                                
                                                                         </Link>
                                                                 </div>
-                                                        </div>
-                                                        <div className="m-3" style={{ textAlign: 'left' }}>
-                                                                <strong style={{ fontSize: '20px' }}>Safeway</strong>
-                                                        </div>
-                                                </div>
-
-
-                                                <div className="col-sm-3">
-                                                        <div className="card collection-card z-depth-1-half" style={{ border: 'none', borderRadius: '20px' }}>
-                                                                <div className="view zoom" style={{ borderRadius: '20px' }}>
-                                                                        <Link>
-                                                                                <div style={{ width: "304px", height: '160px' }}>
-                                                                                        <img src="http://shopsmartcart.reflomsolutions.com/webimg/storeimage21.jpg" class="img-fluid"
-                                                                                                alt="" />
-                                                                                </div>
-                                                                        </Link>
-                                                                </div>
-                                                        </div>
-                                                        <div className="m-3" style={{ textAlign: 'left' }}>
-                                                                <strong style={{ fontSize: '20px' }}>Raley's</strong>
-                                                        </div>
+                                                       </div>
 
                                                 </div>
+                                                       <div className="m-3" style={{ textAlign: 'left' }}>
+                                                        <strong style={{ fontSize: '20px' }}>{dynamicData.store_name}</strong>
+                                                     </div>
 
-
-                                                <div className="col-sm-3">
-                                                        <div className="card collection-card z-depth-1-half" style={{ border: 'none', borderRadius: '20px' }}>
-                                                                <div className="view zoom" style={{ borderRadius: '20px' }}>
-                                                                        <Link>
-                                                                                <div style={{ width: "304px", height: '160px' }}>
-                                                                                        <img src="http://shopsmartcart.reflomsolutions.com/webimg/storeimage22.jpg" class="img-fluid"
-                                                                                                alt="" />
-                                                                                </div>
-                                                                        </Link>
-                                                                </div>
-                                                        </div>
-                                                        <div className="m-3" style={{ textAlign: 'left' }}>
-                                                                <strong style={{ fontSize: '20px' }}>Lucky Supermarkets</strong>
-                                                        </div>
-                                                </div>
+                                                
                                         </div>
-
-
-                                        <div className="row mt-5 mb-5">
-
-                                                <div className="col-sm-3">
-                                                        <div className="card collection-card z-depth-1-half" style={{ border: 'none', borderRadius: '20px' }}>
-                                                                <div className="view zoom" style={{ borderRadius: '20px' }}>
-                                                                        <Link>
-                                                                                <div style={{ width: "304px", height: '160px' }}>
-                                                                                        <img src="http://shopsmartcart.reflomsolutions.com/webimg/storeimage23.jpg" class="img-fluid"
-                                                                                                alt="" />
-                                                                                </div>
-                                                                        </Link>
-                                                                </div>
-                                                        </div>
-                                                        <div className="m-3" style={{ textAlign: 'left' }}>
-                                                                <strong style={{ fontSize: '20px' }}>Smart Foodservice </strong>
-                                                        </div>
-                                                </div>
-
-                                                <div className="col-sm-3">
-                                                        <div className="card collection-card z-depth-1-half" style={{ border: 'none', borderRadius: '20px' }}>
-                                                                <div className="view zoom" style={{ borderRadius: '20px' }}>
-                                                                        <Link>
-                                                                                <div style={{ width: "304px", height: '160px' }}>
-                                                                                        <img src="http://shopsmartcart.reflomsolutions.com/webimg/storeimage24.jpg" class="img-fluid"
-                                                                                                alt="" />
-                                                                                </div>
-                                                                        </Link>
-                                                                </div>
-                                                        </div>
-                                                        <div className="m-3" style={{ textAlign: 'left' }}>
-                                                                <strong style={{ fontSize: '20px' }}>Smart & Final</strong>
-                                                        </div>
-                                                </div>
-
-
-                                                <div className="col-sm-3">
-                                                        <div className="card collection-card z-depth-1-half" style={{ border: 'none', borderRadius: '20px' }}>
-                                                                <div className="view zoom" style={{ borderRadius: '20px' }}>
-                                                                        <Link>
-                                                                                <div style={{ width: "304px", height: '160px' }}>
-                                                                                        <img src="http://shopsmartcart.reflomsolutions.com/webimg/storeimage25.jpg" class="img-fluid"
-                                                                                                alt="" />
-                                                                                </div>
-                                                                        </Link>
-                                                                </div>
-                                                        </div>
-                                                        <div className="m-3" style={{ textAlign: 'left' }}>
-                                                                <strong style={{ fontSize: '20px' }}>FoodMaxx</strong>
-                                                        </div>
-
-                                                </div>
-
-
-                                                <div className="col-sm-3">
-                                                        <div className="card collection-card z-depth-1-half" style={{ border: 'none', borderRadius: '20px' }}>
-                                                                <div className="view zoom" style={{ borderRadius: '20px' }}>
-                                                                        <Link>
-                                                                                <div style={{ width: "304px", height: '160px' }}>
-                                                                                        <img src="http://shopsmartcart.reflomsolutions.com/webimg/storeimage26.jpg" class="img-fluid"
-                                                                                                alt="" />
-                                                                                </div>
-                                                                        </Link>
-                                                                </div>
-                                                        </div>
-                                                        <div className="m-3" style={{ textAlign: 'left' }}>
-                                                                <strong style={{ fontSize: '20px' }}>Bianchini's Market San Carlo</strong>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-                                        <div className="row mt-5 mb-5">
-
-                                                <div className="col-sm-3">
-                                                        <div className="card collection-card z-depth-1-half" style={{ border: 'none', borderRadius: '20px' }}>
-                                                                <div className="view zoom" style={{ borderRadius: '20px' }}>
-                                                                        <Link>
-                                                                                <div style={{ width: "304px", height: '160px' }}>
-                                                                                        <img src="http://shopsmartcart.reflomsolutions.com/webimg/storeimage27.jpg" class="img-fluid"
-                                                                                                alt="" />
-                                                                                </div>
-                                                                        </Link>
-                                                                </div>
-                                                        </div>
-                                                        <div className="m-3" style={{ textAlign: 'left' }}>
-                                                                <strong style={{ fontSize: '20px' }}>Piazza's Fine Foods</strong>
-                                                        </div>
-                                                </div>
-
-                                                <div className="col-sm-3">
-                                                        <div className="card collection-card z-depth-1-half" style={{ border: 'none', borderRadius: '20px' }}>
-                                                                <div className="view zoom" style={{ borderRadius: '20px' }}>
-                                                                        <Link>
-                                                                                <div style={{ width: "304px", height: '160px' }}>
-                                                                                        <img src="http://shopsmartcart.reflomsolutions.com/webimg/storeimage9.jpg" class="img-fluid"
-                                                                                                alt="" />
-                                                                                </div>
-                                                                        </Link>
-                                                                </div>
-                                                        </div>
-                                                        <div className="m-3" style={{ textAlign: 'left' }}>
-                                                                <strong style={{ fontSize: '20px' }}>Bianchini's Market Portola Valley</strong>
-                                                        </div>
-                                                </div>
-
-
-                                                <div className="col-sm-3">
-                                                        <div className="card collection-card z-depth-1-half" style={{ border: 'none', borderRadius: '20px' }}>
-                                                                <div className="view zoom" style={{ borderRadius: '20px' }}>
-                                                                        <Link>
-                                                                                <div style={{ width: "304px", height: '160px' }}>
-                                                                                        <img src="http://shopsmartcart.reflomsolutions.com/webimg/storeimage9.jpg" class="img-fluid"
-                                                                                                alt="" />
-                                                                                </div>
-                                                                        </Link>
-                                                                </div>
-                                                        </div>
-                                                        <div className="m-3" style={{ textAlign: 'left' }}>
-                                                                <strong style={{ fontSize: '20px' }}>Draeger's Market</strong>
-                                                        </div>
-
-                                                </div>
-
-
-                                        </div>
-                                        <hr />
-
-                                        <div className="row mt-5 mb-5">
-
-
-                                                <div className="col-sm-3">
-                                                        <h1 className="text-center">New Stores </h1>
-
-                                                        <div className="card collection-card z-depth-1-half" style={{ border: 'none', borderRadius: '20px' }}>
-                                                                <div className="view zoom" style={{ borderRadius: '20px' }}>
-                                                                        <Link>
-                                                                                <div style={{ width: "304px", height: '160px' }}>
-                                                                                        <img src="http://shopsmartcart.reflomsolutions.com/webimg/storeimage28.jpg" class="img-fluid"
-                                                                                                alt="" />
-                                                                                </div>
-                                                                        </Link>
-                                                                </div>
-                                                        </div>
-                                                        <div className="m-3" style={{ textAlign: 'left' }}>
-                                                                <strong style={{ fontSize: '20px' }}>WALMART</strong>
-                                                        </div>
-                                                </div>
-
-
-                                        </div>
-
-
-
-                                </section>
-
-
-
+                                        
+                                        )}
+                                 </div>
                         </div>
-                </React.Fragment>
-        );
+
+                             
+                        </>
+                );
+        }
 }
+
 export default Categories;
+
+
 
 
 

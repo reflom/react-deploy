@@ -551,7 +551,7 @@ import axios from 'axios';
 import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
 import './Signin.css';
-
+import { Modal} from 'react-bootstrap';
 
 
 
@@ -562,8 +562,13 @@ const Signin=()=>{
   const [password, setPassword] = useState('');
   const [googleData, setgoogleData] = useState([]);
   const [facebookData , setFacebookData]=useState([]);
+  // const [showHide,setshowHide]=useState(false);
+  const [show, setShow] = useState(false);
 
-
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  
+ 
 
 function handleSubmit(e){
   
@@ -573,7 +578,7 @@ function handleSubmit(e){
       e.preventDefault()
 
 
-      app.use(cors());
+     
       var axios = require('axios');
      var FormData = require('form-data');
      var data = new FormData();
@@ -799,9 +804,31 @@ const responseGoogle = (response) => {
 
           
 
-           <p className="text-center mt-4" style={{ fontSize: '19px' }}>Forget Password  <Link to='Signup'>Forget password ?</Link></p>
-           <p className="text-center" style={{ fontSize: '19px' }}> Don't Have Account ? <Link to='/signup'>Sign Up</Link></p>
+           <p className="text-center mt-4" style={{ fontSize: '19px' }}>Forget Password  <Button color="primary" onClick={handleShow}>Forget password ?</Button></p>
+
+           
+           {/* <p className="text-center" style={{ fontSize: '19px' }}> Don't Have Account ? <Link to='/signup'>Sign Up</Link></p> */}
          </div>
+
+         <Modal size='md'
+         style={{background:'blur'}}
+          show={show} 
+         aria-labelledby="contained-modal-title-vcenter"
+          centered
+          >
+          <Modal.Header closeButton onClick={handleClose} style={{ border: 'none' }}>
+
+          </Modal.Header>
+          <Modal.Body style={{ margin: '10px' }}>
+
+          <h1> this os modal</h1>
+              
+
+          </Modal.Body>
+
+        </Modal>
+
+        
 
  
 

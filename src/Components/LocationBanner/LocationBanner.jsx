@@ -174,3 +174,5 @@ const mapDispatchProps =(dispatch)=>{
 
 
 export default connect(null,mapDispatchProps)(LocationBanner);
+
+

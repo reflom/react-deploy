@@ -7,6 +7,7 @@ import Realtedproducts from '../Relatedproducts/Relatedproducts';
 import Topsellingproducts from '../Topselling/Topselling';
 import Relatedproducts from '../Relatedproducts/Relatedproducts';
 import { Image} from 'semantic-ui-react';
+
 class Viewproducts extends React.Component {
   constructor() {
     super();

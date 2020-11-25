@@ -8,6 +8,9 @@ import Frequent from '../FrequentlyBroughtProducts/Frequent';
 
 const Productlistpage=()=>{
 
+
+    
+
         return(
             <>
             
@@ -15,7 +18,11 @@ const Productlistpage=()=>{
                 <Storeinfoheader2/>
                 
                 <hr/>
-                <Viewproducts/>
+                <Viewproducts
+
+
+
+                />
                 <hr/>
                 <Frequent/>
                 <hr/>
