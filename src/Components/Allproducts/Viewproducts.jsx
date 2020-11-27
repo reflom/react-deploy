@@ -30,9 +30,12 @@ class Viewproducts extends React.Component {
   componentDidMount(){
     const axios =require('axios');
 
-    axios.get("").then(res=>{
+    axios.get("https://shopsmartcart.reflomsolutions.com/public/api_store_product").then(res=>{
           this.setState({productsData: res.data})
+            console.log(this.state.productsData);
     })
+
+    
   }
 
  
@@ -59,34 +62,28 @@ class Viewproducts extends React.Component {
 
         </div>
 
+        <div class="row justify-content-center mt-3"> 
 
-
-<div class="row justify-content-center mt-3">
-
-
-  <div className="col-lg-2  col-6 col-md-4"  >
+{this.state.productsData.map((productItems,index)=>{
+  return(
+   
+    <div className="col-lg-2  col-6 col-md-4" key={index} >
 
 
 <Link onClick={() => this.handleModalShowHide()}>             
-<Card  style={{ width: '210px',height:'340px',margin:'10px' }}>
-            <div className="container-fluid" >
-                 {/* <div style={{float:'right',position:'absolute',left:'155px',top:'15px'}}>
-                    <span >
 
-                      <button class="circular  medium ui  button p-2" data-tooltip="Add to Cart" style={{color:'green',backgroundColor:'transparent'}}>
-                          <i class="cart plus large icon" ></i>
-                        </button>
-                    </span>
-                  </div> */}
+<Card  style={{ width: '210px',height:'340px',margin:'10px' }}  key={productItems.product_id}>
+            <div className="container-fluid" >
+                
             <div className="text-center">
-                <Card.Img className="img-thumbnail mt-2" style={{width:'210px',height:'200px'}} variant="top" src="http://shopsmartcart.reflomsolutions.com/webimg/productimage10.jpeg" />
+                <Card.Img className="img-thumbnail mt-2" style={{width:'210px',height:'200px'}} variant="top" src={`https://shopsmartcart.reflomsolutions.com/public/storeimage/`+productItems.admin_product_image} />
             </div>
 
                    <div className="card-body">
                       <div>
-                              <p style={{marginBottom:'0px',fontSize:'15px'}}><strong> $ 2.5 </strong></p>
-                               <p style={{marginBottom:'0px'}}> Fish-  </p>
-                              <p style={{marginBottom:'0px'}}>Eliminating Air Freshner </p>
+                              <p style={{marginBottom:'0px',fontSize:'15px'}}><strong>{productItems.product_price} </strong></p>
+                               <p style={{marginBottom:'0px'}}> {productItems.admin_product_name} </p>
+                              <p style={{marginBottom:'0px'}}>{productItems.admin_product_description}</p>
                        </div>
 
                          <div>
@@ -99,6 +96,13 @@ class Viewproducts extends React.Component {
  </Card> 
 </Link>          
 </div>
+  );
+})}
+
+
+
+
+  
 
             <Modal size='xl' show={this.state.showHide} >
               <Modal.Header closeButton onClick={() => this.handleModalShowHide()} style={{border:'none'}}>

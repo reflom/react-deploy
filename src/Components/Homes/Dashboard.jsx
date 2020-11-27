@@ -14,18 +14,20 @@ const Dashboard =()=>{
 
     return (
     <>
+   
     
-        <Header/>
-        
-        <Storeinformation/>
-      
-        <Categories/>
-         <hr/>   
-        <Howitworks2/>
-        <hr/>
+                <Header/>
+                
+                <Storeinformation/>
+            
+                <Categories/>
+                <hr/>   
+                <Howitworks2/>
+                <hr/>
 
-        <Storepartners/>
-        <Footer/>
+                <Storepartners/>
+                <Footer/>
+     
           
     </>
 );
