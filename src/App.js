@@ -1,7 +1,7 @@
 import React from 'react';
 import Signin from './Components/Signin/Signin';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { Route, Router, BrowserRouter,Switch } from 'react-router-dom';
+import { Route, Router,Switch } from 'react-router-dom';
 import {
     TransitionGroup,
     CSSTransition
@@ -65,7 +65,7 @@ const App = () => {
     return (
         <>
       
-        <BrowserRouter basename={window.location.pathname || ''} history={history}>
+        <Router basename={window.location.pathname || ''} history={history}>
             <TransitionGroup>
                 <CSSTransition
                     
@@ -112,7 +112,6 @@ const App = () => {
                 <Route exact path='/dummyheader' render={Dummyheader} />
                 <Route exact path='/dashboard' render={Dashboard} />
                 <Route path='/storedashboard' component={Storedashboard} />
-
                 <Route exact path='/productdetail' render={Productdetail} />
                 <Route exact path='/relatedproducts' render={Relatedproducts} />
                 <Route exact path='/shoppingcartpage' render={Shoppingcartpage} />
@@ -130,7 +129,7 @@ const App = () => {
             </Switch>
 </CSSTransition>
         </TransitionGroup>
-</BrowserRouter>
+</Router>
         </>
     )
 }

@@ -124,6 +124,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import YouTubeIcon from '@material-ui/icons/YouTube';
+import { Button } from 'semantic-ui-react'
 // import Logo from '../';
 
 const Footer=()=>{
@@ -142,10 +143,10 @@ const Footer=()=>{
                                                          <ol   className="list-unstyled  pt-3 mt-3"  >
                                                         
                                                         <div className="container-fluid justify-content-center" style={{display:"flex"}}>
-                                                             <li className="pl-2" ><Link style={{color:'black'}}><FacebookIcon fontSize='large'/></Link></li>
-                                                             <li className="pl-2" ><Link style={{color:'black'}}><InstagramIcon fontSize='large'/></Link></li>
-                                                             <li className="pl-2" ><Link style={{color:'black'}}><TwitterIcon fontSize='large'/></Link></li>
-                                                            <li className="pl-2" ><Link style={{color:'black'}}><YouTubeIcon fontSize='large'/></Link></li>
+                                                             <li className="pl-2" ><Link style={{color:'black'}}><Button size='big' circular color='facebook' icon='facebook' /></Link></li>
+                                                             <li className="pl-2" ><Link style={{color:'black'}}><Button size='big' circular color='instagram' icon='instagram' /></Link></li>
+                                                             <li className="pl-2" ><Link style={{color:'black'}}><Button size='big' circular color='twitter' icon='twitter' /></Link></li>
+                                                            <li className="pl-2" ><Link style={{color:'black'}}><Button size='big' circular color='youtube' icon='youtube' /></Link></li>
                                                         </div>
                                                         
                                                         </ol>

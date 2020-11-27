@@ -6,8 +6,12 @@ import 'mdbreact/dist/css/mdb.css';
 import App from './App';
 import {Provider} from 'react-redux';
 import store from './redux/store';
+import { fetchPosts,fetchProductData } from './redux/actions'
 
 
+store.dispatch(fetchProductData());
+
+store.dispatch(fetchPosts());
 
 ReactDOM.render(
         <Provider store={store}>    

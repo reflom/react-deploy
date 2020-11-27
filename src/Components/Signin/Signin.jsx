@@ -564,7 +564,6 @@ const Signin=()=>{
   const [facebookData , setFacebookData]=useState([]);
   // const [showHide,setshowHide]=useState(false);
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   
@@ -577,9 +576,7 @@ function handleSubmit(e){
   
       e.preventDefault()
 
-
-     
-      var axios = require('axios');
+    var axios = require('axios');
      var FormData = require('form-data');
      var data = new FormData();
      data.append('email', email);
@@ -736,6 +733,7 @@ const responseGoogle = (response) => {
                // onChange = {(event,newValue) => this.setState({username:newValue})}
               //  onChange={(text) => { this.handleEmail(text) }}
               onChange={(e) => setEmail(e.target.value)}
+             
              />
            
          

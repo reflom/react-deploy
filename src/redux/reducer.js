@@ -1,12 +1,25 @@
+const posts = (state = [] , action) => {
 
-
-
-const reducer =(state,action)=>{
-
-    if(action.type ==="Register_name"){
-        
-        return(console.log(action));
+    switch(action.type) {
+        case 'FETCH_POSTS_SUCCESS':
+            return action.payload.posts
+        default:
+            return state
     }
 }
 
-export default reducer;
+
+const productData=(state=[],action)=>{
+
+    switch(action.type){
+        case 'FETCH_PRODUCT_DATA':
+            return action.payload.productData
+        default:
+            return state
+    }
+
+
+
+}
+
+export default posts

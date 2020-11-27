@@ -10,8 +10,19 @@ class Topselling extends React.Component{
     constructor(props){
         super(props)
         this.state={
-
+            topsellingData:[]
         }
+    }
+
+    componentDidMount(){
+      
+      const axios=require ('axios');
+      axios.get("https://shopsmartcart.reflomsolutions.com/public/api_store_product").then(res=>{
+        this.setState({topsellingData : res.data})
+        console.log(this.state.topsellingData);
+
+      })
+
     }
 
     render(){
@@ -26,349 +37,44 @@ class Topselling extends React.Component{
 
         return(
             <>
-            <div className="App mt-4 mb-4 ">
-                 <h2 className="text-center mt-5 mr-5 ml-5"  style={{fontSize:'30px '}}>TOP SELLING <span style={{color:'orange'}}> PRODUCTS</span> </h2>
-            <Carousel breakPoints={breakPoints}  pagination={false}  style={{marginTop:'70px',marginBottom:"70px"}} >
-                    <Item>
-                    <Card  style={{ width: '210px',height:'340px',margin:'10px' }}>
-            <div className="container-fluid" >
-                 <div style={{float:'right',position:'absolute',left:'155px',top:'15px'}}>
-                    <span >
+            <div className="App mt-4 mb-5">
+                <h2 className="text-center mt-5 mr-5 ml-5"  style={{fontSize:'30px '}}>FREQUENTLY BROUGHT<span style={{color:'orange'}}> PRODUCTS</span> </h2>
+                    
+                    <Carousel breakPoints={breakPoints}  pagination={false}  style={{marginTop:'70px',marginBottom:"70px"}} >
+                      {this.state.topsellingData.map((dynamicProducts,index)=>{
+                        return(
+                          <Item >
+                              <Card  style={{ width: '210px',height:'340px',margin:'10px' }} key={index}>
+                                  <div className="container-fluid" >
+                                    <div className="text-center">
+                                      <Card.Img className="img-thumbnail mt-2" style={{width:'210px',height:'200px'}} variant="top" src={`https://shopsmartcart.reflomsolutions.com/public/images/`+dynamicProducts.admin_product_image} />
+                                    </div>
 
-                          <button class="circular  medium ui  button p-2" data-tooltip="Add to Cart" style={{color:'green',backgroundColor:'transparent'}}>
-                          <i class="cart plus large icon" ></i>
-                        </button>
-                    </span>
-                  </div>
-            <div className="text-center">
-                <Card.Img className="img-thumbnail mt-2" style={{width:'210px',height:'200px'}} variant="top" src="http://shopsmartcart.reflomsolutions.com/webimg/productimage1.jpeg" />
-            </div>
+                                    <div className="card-body">
+                                        <div>
+                                          <p style={{marginBottom:'0px',fontSize:'15px'}}><strong> {dynamicProducts.product_price}</strong></p>
+                                          <p style={{marginBottom:'0px'}}>{dynamicProducts.admin_product_name}</p>
+                                          <p style={{marginBottom:'0px',textOverflow:'initial'}}>{dynamicProducts.admin_product_name}</p>
+                                        </div>
 
-                   <div className="card-body">
-                      <div>
-                              <p style={{marginBottom:'0px',fontSize:'15px'}}><strong> $ 2.5 </strong></p>
-                               <p style={{marginBottom:'0px'}}> Fish-  </p>
-                              <p style={{marginBottom:'0px'}}>Eliminating Air Freshner </p>
-                       </div>
-
-                         <div>
-                             <button class="fluid ui button positive mt-2">Buy Now</button>
+                                        <div>
+                                          <button class="fluid ui button positive mt-2" data-tooltip="Add to Cart">Buy Now</button>
                                                  
-                             </div>
-                    </div>  
+                                        </div>
+                                    </div>
 
-</div>
- </Card>
-                    </Item>
+                                  </div>
 
-
-
-                    <Item>
-                    <Card  style={{ width: '210px',height:'340px',margin:'10px' }}>
-            <div className="container-fluid" >
-                 <div style={{float:'right',position:'absolute',left:'155px',top:'15px'}}>
-                    <span >
-
-                          <button class="circular  medium ui  button p-2" data-tooltip="Add to Cart" style={{color:'green',backgroundColor:'transparent'}}>
-                          <i class="cart plus large icon" ></i>
-                        </button>
-                    </span>
-                  </div>
-            <div className="text-center">
-                <Card.Img className="img-thumbnail mt-2" style={{width:'210px',height:'200px'}} variant="top" src="http://shopsmartcart.reflomsolutions.com/webimg/productimage2.jpeg" />
+                              </Card>
+                          </Item>
+                          
+                        );
+                      })}
+                    </Carousel>
+            
+            
             </div>
-
-                   <div className="card-body">
-                      <div>
-                              <p style={{marginBottom:'0px',fontSize:'15px'}}><strong> $ 2.5 </strong></p>
-                               <p style={{marginBottom:'0px'}}> Fish-  </p>
-                              <p style={{marginBottom:'0px'}}>Eliminating Air Freshner </p>
-                       </div>
-
-                         <div>
-                             <button class="fluid ui button positive mt-2">Buy Now</button>
-                                                 
-                             </div>
-                    </div>  
-
-</div>
- </Card>
-                    </Item>
-
-
-
-                    <Item>
-                    <Card  style={{ width: '210px',height:'340px',margin:'10px' }}>
-            <div className="container-fluid" >
-                 <div style={{float:'right',position:'absolute',left:'155px',top:'15px'}}>
-                    <span >
-
-                          <button class="circular  medium ui  button p-2" data-tooltip="Add to Cart" style={{color:'green',backgroundColor:'transparent'}}>
-                          <i class="cart plus large icon" ></i>
-                        </button>
-                    </span>
-                  </div>
-            <div className="text-center">
-                <Card.Img className="img-thumbnail mt-2" style={{width:'210px',height:'200px'}} variant="top" src="http://shopsmartcart.reflomsolutions.com/webimg/productimage3.jpeg" />
-            </div>
-
-                   <div className="card-body">
-                      <div>
-                              <p style={{marginBottom:'0px',fontSize:'15px'}}><strong> $ 2.5 </strong></p>
-                               <p style={{marginBottom:'0px'}}> Fish-  </p>
-                              <p style={{marginBottom:'0px'}}>Eliminating Air Freshner </p>
-                       </div>
-
-                         <div>
-                             <button class="fluid ui button positive mt-2">Buy Now</button>
-                                                 
-                             </div>
-                    </div>  
-
-</div>
- </Card>
-                    </Item>
-
-
-
-                    <Item>
-                    <Card  style={{ width: '210px',height:'340px',margin:'10px' }}>
-            <div className="container-fluid" >
-                 <div style={{float:'right',position:'absolute',left:'155px',top:'15px'}}>
-                    <span >
-
-                          <button class="circular  medium ui  button p-2" data-tooltip="Add to Cart" style={{color:'green',backgroundColor:'transparent'}}>
-                          <i class="cart plus large icon" ></i>
-                        </button>
-                    </span>
-                  </div>
-            <div className="text-center">
-                <Card.Img className="img-thumbnail mt-2" style={{width:'210px',height:'200px'}} variant="top" src="http://shopsmartcart.reflomsolutions.com/webimg/productimage4.jpeg" />
-            </div>
-
-                   <div className="card-body">
-                      <div>
-                              <p style={{marginBottom:'0px',fontSize:'15px'}}><strong> $ 2.5 </strong></p>
-                               <p style={{marginBottom:'0px'}}> Fish-  </p>
-                              <p style={{marginBottom:'0px'}}>Eliminating Air Freshner </p>
-                       </div>
-
-                         <div>
-                             <button class="fluid ui button positive mt-2">Buy Now</button>
-                                                 
-                             </div>
-                    </div>  
-
-</div>
- </Card>
-                    </Item>
-
-
-
-
-                    <Item>
-                    <Card  style={{ width: '210px',height:'340px',margin:'10px' }}>
-            <div className="container-fluid" >
-                 <div style={{float:'right',position:'absolute',left:'155px',top:'15px'}}>
-                    <span >
-
-                          <button class="circular  medium ui  button p-2" data-tooltip="Add to Cart" style={{color:'green',backgroundColor:'transparent'}}>
-                          <i class="cart plus large icon" ></i>
-                        </button>
-                    </span>
-                  </div>
-            <div className="text-center">
-                <Card.Img className="img-thumbnail mt-2" style={{width:'210px',height:'200px'}} variant="top" src="http://shopsmartcart.reflomsolutions.com/webimg/productimage5.jpeg" />
-            </div>
-
-                   <div className="card-body">
-                      <div>
-                              <p style={{marginBottom:'0px',fontSize:'15px'}}><strong> $ 2.5 </strong></p>
-                               <p style={{marginBottom:'0px'}}> Fish-  </p>
-                              <p style={{marginBottom:'0px'}}>Eliminating Air Freshner </p>
-                       </div>
-
-                         <div>
-                             <button class="fluid ui button positive mt-2">Buy Now</button>
-                                                 
-                             </div>
-                    </div>  
-
-</div>
- </Card>
-                    </Item>
-
-
-
-
-                    <Item>
-                    <Card  style={{ width: '210px',height:'340px',margin:'10px' }}>
-            <div className="container-fluid" >
-                 <div style={{float:'right',position:'absolute',left:'155px',top:'15px'}}>
-                    <span >
-
-                          <button class="circular  medium ui  button p-2" data-tooltip="Add to Cart" style={{color:'green',backgroundColor:'transparent'}}>
-                          <i class="cart plus large icon" ></i>
-                        </button>
-                    </span>
-                  </div>
-            <div className="text-center">
-                <Card.Img className="img-thumbnail mt-2" style={{width:'210px',height:'200px'}} variant="top" src="http://shopsmartcart.reflomsolutions.com/webimg/productimage6.jpeg" />
-            </div>
-
-                   <div className="card-body">
-                      <div>
-                              <p style={{marginBottom:'0px',fontSize:'15px'}}><strong> $ 2.5 </strong></p>
-                               <p style={{marginBottom:'0px'}}> Fish-  </p>
-                              <p style={{marginBottom:'0px'}}>Eliminating Air Freshner </p>
-                       </div>
-
-                         <div>
-                             <button class="fluid ui button positive mt-2">Buy Now</button>
-                                                 
-                             </div>
-                    </div>  
-
-</div>
- </Card>
-                    </Item>
-
-
-                    <Item>
-                    <Card  style={{ width: '210px',height:'340px',margin:'10px' }}>
-            <div className="container-fluid" >
-                 <div style={{float:'right',position:'absolute',left:'155px',top:'15px'}}>
-                    <span >
-
-                          <button class="circular  medium ui  button p-2" data-tooltip="Add to Cart" style={{color:'green',backgroundColor:'transparent'}}>
-                          <i class="cart plus large icon" ></i>
-                        </button>
-                    </span>
-                  </div>
-            <div className="text-center">
-                <Card.Img className="img-thumbnail mt-2" style={{width:'210px',height:'200px'}} variant="top" src="http://shopsmartcart.reflomsolutions.com/webimg/productimage7.jpeg" />
-            </div>
-
-                   <div className="card-body">
-                      <div>
-                              <p style={{marginBottom:'0px',fontSize:'15px'}}><strong> $ 2.5 </strong></p>
-                               <p style={{marginBottom:'0px'}}> Fish-  </p>
-                              <p style={{marginBottom:'0px'}}>Eliminating Air Freshner </p>
-                       </div>
-
-                         <div>
-                             <button class="fluid ui button positive mt-2">Buy Now</button>
-                                                 
-                             </div>
-                    </div>  
-
-</div>
- </Card>
-                    </Item>
-
-
-
-                    <Item>
-                    <Card  style={{ width: '210px',height:'340px',margin:'10px' }}>
-            <div className="container-fluid" >
-                 <div style={{float:'right',position:'absolute',left:'155px',top:'15px'}}>
-                    <span >
-
-                          <button class="circular  medium ui  button p-2" data-tooltip="Add to Cart" style={{color:'green',backgroundColor:'transparent'}}>
-                          <i class="cart plus large icon" ></i>
-                        </button>
-                    </span>
-                  </div>
-            <div className="text-center">
-                <Card.Img className="img-thumbnail mt-2" style={{width:'210px',height:'200px'}} variant="top" src="http://shopsmartcart.reflomsolutions.com/webimg/productimage8.jpeg" />
-            </div>
-
-                   <div className="card-body">
-                      <div>
-                              <p style={{marginBottom:'0px',fontSize:'15px'}}><strong> $ 2.5 </strong></p>
-                               <p style={{marginBottom:'0px'}}> Fish-  </p>
-                              <p style={{marginBottom:'0px'}}>Eliminating Air Freshner </p>
-                       </div>
-
-                         <div>
-                             <button class="fluid ui button positive mt-2">Buy Now</button>
-                                                 
-                             </div>
-                    </div>  
-
-</div>
- </Card>
-                    </Item>
-
-
-
-                    <Item>
-                    <Card  style={{ width: '210px',height:'340px',margin:'10px' }}>
-            <div className="container-fluid" >
-                 <div style={{float:'right',position:'absolute',left:'155px',top:'15px'}}>
-                    <span >
-
-                          <button class="circular  medium ui  button p-2" data-tooltip="Add to Cart" style={{color:'green',backgroundColor:'transparent'}}>
-                          <i class="cart plus large icon" ></i>
-                        </button>
-                    </span>
-                  </div>
-            <div className="text-center">
-                <Card.Img className="img-thumbnail mt-2" style={{width:'210px',height:'200px'}} variant="top" src="http://shopsmartcart.reflomsolutions.com/webimg/productimage9.jpeg" />
-            </div>
-
-                   <div className="card-body">
-                      <div>
-                              <p style={{marginBottom:'0px',fontSize:'15px'}}><strong> $ 2.5 </strong></p>
-                               <p style={{marginBottom:'0px'}}> Fish-  </p>
-                              <p style={{marginBottom:'0px'}}>Eliminating Air Freshner </p>
-                       </div>
-
-                         <div>
-                             <button class="fluid ui button positive mt-2">Buy Now</button>
-                                                 
-                             </div>
-                    </div>  
-
-</div>
- </Card>
-                    </Item>
-
-
-
-                    <Item>
-                    <Card  style={{ width: '210px',height:'340px',margin:'10px' }}>
-            <div className="container-fluid" >
-                 <div style={{float:'right',position:'absolute',left:'155px',top:'15px'}}>
-                    <span >
-
-                          <button class="circular  medium ui  button p-2" data-tooltip="Add to Cart"  style={{color:'green',backgroundColor:'transparent'}}>
-                          <i class="cart plus large icon" ></i>
-                        </button>
-                    </span>
-                  </div>
-            <div className="text-center">
-                <Card.Img className="img-thumbnail mt-2" style={{width:'210px',height:'200px'}} variant="top" src="http://shopsmartcart.reflomsolutions.com/webimg/productimage9.jpeg" />
-            </div>
-
-                   <div className="card-body">
-                      <div>
-                              <p style={{marginBottom:'0px',fontSize:'15px'}}><strong> $ 2.5 </strong></p>
-                               <p style={{marginBottom:'0px'}}> Fish-  </p>
-                              <p style={{marginBottom:'0px'}}>Eliminating Air Freshner </p>
-                       </div>
-
-                         <div>
-                             <button class="fluid ui button positive mt-2">Buy Now</button>
-                                                 
-                             </div>
-                    </div>  
-
-</div>
- </Card>
-                    </Item>
-            </Carousel>
-            </div>
+           
 
             </>
         );
