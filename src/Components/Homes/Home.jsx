@@ -15,7 +15,7 @@ import LocationBanner2 from '../LocationBanner/LocationBanner2';
 
 const Home=()=>{
     
-    location.reload();
+    
 
     return (
     <>

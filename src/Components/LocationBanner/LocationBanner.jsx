@@ -325,7 +325,7 @@ class LocationBanner extends React.Component {
 
                           <button className="btn peach-gradient btn-lg btn-block p-3 mt-4" ><h5>Continue</h5></button>
 
-                          <p className="p-3" style={{ textAlign: 'center', fontSize: '20px' }}> Already have an Account ? <span  > <Link to='/dashboard' style={{ color: 'orange' }} >
+                          <p className="p-3" style={{ textAlign: 'center', fontSize: '20px' }}> Already have an Account ? <span  > <Link to='/home' style={{ color: 'orange' }} >
                             Sign in
                             </Link></span></p>
 
