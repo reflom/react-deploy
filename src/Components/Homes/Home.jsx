@@ -9,15 +9,18 @@ import Howitworks from '../Howitworks/Howitworks';
 import Storeslider from '../Storeslider/Storeslider';
 import Becomeshopper from '../Becomeshopper/Becomeshopper';
 import LocationBanner from '../LocationBanner/LocationBanner';
+import LocationBanner2 from '../LocationBanner/LocationBanner2';
 
 
 
 const Home=()=>{
+    
+    location.reload();
 
     return (
     <>
         <Header/>
-        <LocationBanner/>
+        <LocationBanner2/>
         <Howitworks/>
         <Categoriesslider/>
         <hr/>

@@ -375,7 +375,7 @@ class Categories extends React.Component{
 
         componentDidMount(){
                 const axios=require("axios");
-                axios.get("https://shopsmartcart.reflomsolutions.com/public/api_store/")
+                axios.get("https://shopsmartcart.reflomsolutions.com/public/api_store")
                 .then(res =>{
                                 this.setState({storeData : res.data});
                                        

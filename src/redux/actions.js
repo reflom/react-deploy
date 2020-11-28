@@ -10,7 +10,7 @@ export const fetchPosts =  () => {
 
     return async dispatch => {
         try {
-            let posts = await axios.get('https://shopsmartcart.reflomsolutions.com/public/api_store')
+            let posts = await axios.get('')
             dispatch(fetchPostsSuccess(posts.data) )
         }
         catch(e){
@@ -34,7 +34,7 @@ export const productdetailpage = () =>{
     return async dispatch =>{
 
         try{
-            let productData = await axios.get('https://shopsmartcart.reflomsolutions.com/public/api_city')
+            let productData = await axios.get('')
             dispatch(fetchProductData(productData.data))
         }
         catch(e){

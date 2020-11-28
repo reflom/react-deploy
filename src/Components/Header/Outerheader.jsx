@@ -15,7 +15,7 @@ class Outerheader extends React.Component {
     super();
     this.state = {
       showHide: false,
-      showHide1: false,
+      modalSignup: false,
 
     }
   }
@@ -25,7 +25,8 @@ class Outerheader extends React.Component {
   }
 
   handleModalShowHide1() {
-    this.setState({ showHide1: !this.state.showHide1 })
+    console.log("working !")
+    this.setState({ modalSignup: !this.state.modalSignup })
   }
 
 
@@ -47,8 +48,8 @@ class Outerheader extends React.Component {
 
                     <div className="d-flex ">
                    
-              <Link to=''>  <button className="btn peach-gradient btn-lg" onClick={() => this.handleModalShowHide()} style={{fontSize:'17px'}}>Sign IN</button></Link>
-              <Link to=''> <button className="btn peach-gradient btn-lg" onClick={() => this.handleModalShowHide1()} style={{ fontSize: '17px' }}>Sign Up</button></Link>      
+              <button className="btn peach-gradient btn-lg" onClick={() => this.handleModalShowHide()} style={{fontSize:'17px'}}>Sign IN</button>
+               <button className="btn peach-gradient btn-lg" onClick={() => this.handleModalShowHide1()} style={{ fontSize: '17px' }}>Sign Up</button>     
 
                     </div>
 
@@ -68,7 +69,7 @@ class Outerheader extends React.Component {
 
         </Modal>
 
-        <Modal size='md' show={this.state.showHide1}  >
+        <Modal size='md' show={this.state.modalSignup}  >
           <Modal.Header closeButton onClick={() => this.handleModalShowHide1()} style={{ border: 'none' }}>
 
           </Modal.Header>

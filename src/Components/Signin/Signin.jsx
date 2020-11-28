@@ -562,21 +562,19 @@ const Signin=()=>{
   const [password, setPassword] = useState('');
   const [googleData, setgoogleData] = useState([]);
   const [facebookData , setFacebookData]=useState([]);
+  
   // const [showHide,setshowHide]=useState(false);
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const [show, setShow] = useState(false);
+
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
   
  
 
 function handleSubmit(e){
+  e.preventDefault();
   
- 
-
-  
-      e.preventDefault()
-
-    var axios = require('axios');
+     var axios = require('axios');
      var FormData = require('form-data');
      var data = new FormData();
      data.append('email', email);
@@ -733,7 +731,6 @@ const responseGoogle = (response) => {
                // onChange = {(event,newValue) => this.setState({username:newValue})}
               //  onChange={(text) => { this.handleEmail(text) }}
               onChange={(e) => setEmail(e.target.value)}
-             
              />
            
          
@@ -802,12 +799,12 @@ const responseGoogle = (response) => {
 
           
 
-           <p className="text-center mt-4" style={{ fontSize: '19px' }}>Forget Password  <Button color="primary" onClick={handleShow}>Forget password ?</Button></p>
+           {/* <p className="text-center mt-4" style={{ fontSize: '19px' }}>Forget Password  <Button color="primary" onClick={handleShow}>Forget password ?</Button></p> */}
 
-           
+           <p className="text-center mt-4" style={{ fontSize: '19px' }}>Forget Password  </p>
            {/* <p className="text-center" style={{ fontSize: '19px' }}> Don't Have Account ? <Link to='/signup'>Sign Up</Link></p> */}
          </div>
-
+{/* 
          <Modal size='md'
          style={{background:'blur'}}
           show={show} 
@@ -824,7 +821,7 @@ const responseGoogle = (response) => {
 
           </Modal.Body>
 
-        </Modal>
+        </Modal> */}
 
         
 
