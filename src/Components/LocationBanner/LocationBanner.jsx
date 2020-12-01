@@ -229,7 +229,21 @@ class LocationBanner extends React.Component {
 
     const axios = require('axios');
 
-    axios.get("https://shopsmartcart.reflomsolutions.com/public/api_city")
+
+// var config = {
+//        method: 'post',
+//        url: 'https://shopsmartcart.reflomsolutions.com/public/api/login',
+//        headers: {
+//          "Content-Type": "application/json",
+//          'Access-Control-Allow-Origin': '*'
+//        },
+//        data: data
+//      };
+
+
+
+
+    axios.get("https://shopsmartcart.reflomsolutions.com/public/api_city",{ 'headers': { 'Access-Control-Allow-Origin': '*' } })
       .then(res => {
         // this.state.citys = res.data;
         this.setState({ citys: res.data })

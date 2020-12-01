@@ -11,6 +11,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import Card from 'react-bootstrap/Card';
+import Notificationbell from './Notificationbell';
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -86,7 +87,7 @@ export default function Notification() {
                             {...TransitionProps}
                             style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
                         >
-                                <Paper elevation={3} style={{width:"250px",zIndex:"999"}} >
+                                <Paper elevation={3} style={{width:"380px",zIndex:"1 !important",position:'absolute',right:'20px'}} >
                                 <ClickAwayListener onClickAway={handleClose}>
                                     <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown} >
                                         <MenuItem onClick={handleClose} style={{padding:'1px'}}>
@@ -100,8 +101,8 @@ export default function Notification() {
                                                notification  2
                                         
                                         </MenuItem>
-                                            <MenuItem  className="text-center"  onClick={handleClose} style={{ padding: '20px'  }}>
-                                                Notification 4
+                                            <MenuItem  className="text-center"  onClick={handleClose} >
+                                                <Notificationbell/>
                                         </MenuItem>
 
                                             <MenuItem onClick={handleClose} style={{ padding: '20px'}}>

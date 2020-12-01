@@ -549,7 +549,7 @@ class Header extends React.Component{
 
 
         <Navbar style={{ backgroundColor: '#F5F5F5' }} expand='lg' style={{ height: '84px' }}  >
-            <NavbarBrand className=" head brand m-4 col-md-2"  style={{fontSize:'40px',fontFamily:'work sans'}}><strong>Smart Shop</strong></NavbarBrand>
+            <NavbarBrand className=" head brand m-4 col-md-2"  style={{fontSize:'40px',fontFamily:'work sans'}}><Link to='/home' style={{color:'black',textDecoration:'none'}}>Smart Shop</Link></NavbarBrand>
 
               {/* <NavItem className="searchbar" style={{marginLeft:'100px'}} >
 

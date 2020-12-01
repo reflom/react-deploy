@@ -221,8 +221,10 @@ import Checkoutpage from './Components/Homes/Checkoutpage';
 import history from './history';
 
 const App = () => {
+ 
     return (
         <>
+       
         <BrowserRouter basename={window.location.pathname || ''} history={history}>
         {/* <BrowserRouter history={history}> */}
             <TransitionGroup>

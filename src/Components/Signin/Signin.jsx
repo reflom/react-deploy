@@ -552,8 +552,8 @@ import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
 import './Signin.css';
 import { Modal} from 'react-bootstrap';
-
-
+import * as EmailValidator from 'email-validator';
+import Alert from '@material-ui/lab/Alert';
 
 const Signin=()=>{
   
@@ -572,45 +572,59 @@ const Signin=()=>{
  
 
 function handleSubmit(e){
+
+ if(EmailValidator.validate(email)){
+  
   e.preventDefault();
   
-     var axios = require('axios');
-     var FormData = require('form-data');
-     var data = new FormData();
-     data.append('email', email);
-     data.append('password', password);
+  var axios = require('axios');
+  var FormData = require('form-data');
+  var data = new FormData();
+  data.append('email', email);
+  data.append('password', password);
 
-     var config = {
-       method: 'post',
-       url: 'https://shopsmartcart.reflomsolutions.com/public/api/login',
-       headers: {
-         "Content-Type": "application/json"
-       },
-       data: data
-     };
+  var config = {
+    method: 'post',
+    url: 'https://shopsmartcart.reflomsolutions.com/public/api/login',
+    headers: {
+      "Content-Type": "application/json",
+      'Access-Control-Allow-Origin': '*'
+    },
+    data: data
+  };
 
-     axios(config)
-       .then(function (response) {
+  axios(config)
+    .then(function (response) {
 
-         // console.log(JSON.stringify(response.data));
-        if(response.status =='200'){
-              console.log(response);
-              
-              alert("login successful ");
-              history.replace('/home');
-             
+      // console.log(JSON.stringify(response.data));
+     if(response.status =='200'){
+           console.log(response);
+           
+           alert("login successful ");
+           history.replace('/home');
+          
 
-        }else if(response.status =='400'){
-              alert("Please Register !!")
-        }
-        
+     }else if(response.status =='400'){
+           alert("Please Register !!")
+     }
+     
 
-       })
+    })
 
-       .catch(function (error) {
-         console.log(error);
-       });
+    .catch(function (error) {
+      console.log(error);
+    });
 }
+else{
+  e.preventDefault();
+  alert("  INVALID EMAIL ID ");
+
+ }
+
+}
+
+ 
+ 
 
 
 
@@ -631,16 +645,16 @@ function facebookSignin(res)
            let responseJson = result;
            console.log(result.data.name);
            alert("login Successfull");
-           history.replace('/home');
-           sessionStorage.setItem("userData", JSON.stringify(result));
+          sessionStorage.setItem("userData", JSON.stringify(result));
   
   
          }).then(function (response) {
   
-        
+         
          setFacebookData({ facebookData: response });
         
          console.log(facebookData);
+
         
          
   
@@ -669,7 +683,7 @@ function googleSignin(res) {
 
          setgoogleData({ googleData: response });
          console.log(googleData)
-         history.replace('/home');
+       
         
   
   
@@ -726,8 +740,10 @@ const responseGoogle = (response) => {
                name="email"
                label="E-mail"
                type="text"
-               id="email"
+              //  id="email"
+              //  helperText="Invalid Email."
                autoComplete="current-password"
+               required
                // onChange = {(event,newValue) => this.setState({username:newValue})}
               //  onChange={(text) => { this.handleEmail(text) }}
               onChange={(e) => setEmail(e.target.value)}
@@ -745,6 +761,7 @@ const responseGoogle = (response) => {
              id="password"
              autoComplete="current-password"
             placeholder="(min 6 characters)"
+            required
             // onChange = {(event,newValue) => this.setState({password:newValue})}
             //  onChange={(text) => { this.handlePassword(text) }}
              onChange={(e) => setPassword(e.target.value)}
@@ -801,7 +818,7 @@ const responseGoogle = (response) => {
 
            {/* <p className="text-center mt-4" style={{ fontSize: '19px' }}>Forget Password  <Button color="primary" onClick={handleShow}>Forget password ?</Button></p> */}
 
-           <p className="text-center mt-4" style={{ fontSize: '19px' }}>Forget Password  </p>
+           {/* <p className="text-center mt-4" style={{ fontSize: '19px' }}>Forget Password  </p> */}
            {/* <p className="text-center" style={{ fontSize: '19px' }}> Don't Have Account ? <Link to='/signup'>Sign Up</Link></p> */}
          </div>
 {/* 

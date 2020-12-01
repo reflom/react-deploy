@@ -524,6 +524,8 @@ import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
 import axios from 'axios';
 import Alert from 'react-bootstrap/Alert';
+import * as EmailValidator from 'email-validator';
+
 const Signup=()=>{
 
   const history = useHistory();
@@ -543,7 +545,11 @@ function handleSubmit(e){
     e.preventDefault();
     alert("Password does not match");
 
- }else{
+ }else if(!EmailValidator.validate(email)){
+  e.preventDefault();
+alert("invalid emial")
+ 
+}else{
     e.preventDefault();
     var axios = require('axios');
     var FormData = require('form-data');
@@ -558,7 +564,8 @@ function handleSubmit(e){
       method: 'post',
       url: 'https://shopsmartcart.reflomsolutions.com/public/api/register',
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        'Access-Control-Allow-Origin': '*'
       },
       data: data
     };
@@ -784,7 +791,7 @@ const responseGoogle = (response) => {
         </center>
 
 
-        <p className="text-center mt-4" style={{ fontSize: '19px' }}> Already have an account ? <Link to='Signin'>Sign in</Link></p>
+        {/* <p className="text-center mt-4" style={{ fontSize: '19px' }}> Already have an account ? <Link to='Signin'>Sign in</Link></p> */}
       </div>
     
   
