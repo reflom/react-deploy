@@ -30,7 +30,7 @@ class Viewproducts extends React.Component {
   componentDidMount(){
     const axios =require('axios');
 
-    axios.get("https://shopsmartcart.reflomsolutions.com/public/api_store_product").then(res=>{
+    axios.get("https://www.shopsmartcart.reflomsolutions.com/public/api_store_product").then(res=>{
           this.setState({productsData: res.data})
             console.log(this.state.productsData);
     })

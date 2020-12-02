@@ -139,7 +139,7 @@ class LocationBanner2 extends React.Component {
 
     const axios = require('axios');
 
-    axios.get("https://shopsmartcart.reflomsolutions.com/public/api_city")
+    axios.get("https://www.shopsmartcart.reflomsolutions.com/public/api_city")
       .then(res => {
         // this.state.citys = res.data;
         this.setState({ citys: res.data })

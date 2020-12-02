@@ -21,6 +21,7 @@
     "owl.carousel": "^2.3.4",
     "postman-request": "^2.88.1-postman.27",
     "react": "^16.13.1",
+    "react-activity": "^1.2.2",
     "react-bootstrap": "^1.3.0",
     "react-dom": "^16.13.1",
     "react-elastic-carousel": "^0.9.0",

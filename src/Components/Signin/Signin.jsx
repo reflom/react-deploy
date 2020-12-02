@@ -585,7 +585,7 @@ function handleSubmit(e){
 
   var config = {
     method: 'post',
-    url: 'https://shopsmartcart.reflomsolutions.com/public/api/login',
+    url: 'https://www.shopsmartcart.reflomsolutions.com/public/api/login',
     headers: {
       "Content-Type": "application/json",
       'Access-Control-Allow-Origin': '*'

@@ -562,7 +562,7 @@ alert("invalid emial")
     
     var config = {
       method: 'post',
-      url: 'https://shopsmartcart.reflomsolutions.com/public/api/register',
+      url: 'https://www.shopsmartcart.reflomsolutions.com/public/api/register',
       headers: {
         "Content-Type": "application/json",
         'Access-Control-Allow-Origin': '*'
