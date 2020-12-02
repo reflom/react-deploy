@@ -243,7 +243,7 @@ class LocationBanner extends React.Component {
 
 
 
-    axios.get("https://shopsmartcart.reflomsolutions.com/public/api_city",{ 'headers': { 'Access-Control-Allow-Origin': '*' } })
+    axios.get("https://shopsmartcart.reflomsolutions.com/public/api_city")
       .then(res => {
         // this.state.citys = res.data;
         this.setState({ citys: res.data })

@@ -71,7 +71,7 @@ const Howitworks=()=>{
 
                     <div className="row  justify-content-center">
                         <div className=" mt-5">
-                            <img className="img-fluid" src="http://shopsmartcart.reflomsolutions.com/webimg/delivery-image.png"/>
+                            <img className="img-fluid" src="https://shopsmartcart.reflomsolutions.com/webimg/delivery-image.png"/>
                         </div>
                     </div>
 
@@ -80,7 +80,7 @@ const Howitworks=()=>{
                         <div className="col-sm-4 mt-5 mb-5"style={{backgroundColor:'#f2f2f2'}}>
                                     <div className="m-2 " >
                                         <div style={{width:'300px',margin:'auto'}}>
-                                                    <img className="img-thumbnail img-fluid" src="http://shopsmartcart.reflomsolutions.com/webimg/click.jpg" />                  
+                                                    <img className="img-thumbnail img-fluid" src="https://shopsmartcart.reflomsolutions.com/webimg/click.jpg" />                  
                                         </div>
                                         
                                         <div className="text-center  mt-4" ><h1>YOU CLICK AND PICK</h1></div>
@@ -92,7 +92,7 @@ const Howitworks=()=>{
                         <div class="col-sm-4 mt-5 mb-5" style={{backgroundColor:'#f2f2f2'}} >
                         <div className="m-2 ">
                                         <div style={{width:'300px',margin:'auto'}}>
-                                                    <img className="img-thumbnail img-fluid" src="http://shopsmartcart.reflomsolutions.com/webimg/frontpage2.jpg" />                  
+                                                    <img className="img-thumbnail img-fluid" src="https://shopsmartcart.reflomsolutions.com/webimg/frontpage2.jpg" />                  
                                         </div>
                                         
                                         <div className="text-center  mt-4"><h1>WE SHOP AND PACK</h1></div>
@@ -104,7 +104,7 @@ const Howitworks=()=>{
                         <div class="col-sm-4 mt-5 mb-5" style={{backgroundColor:'#f2f2f2'}}>
                         <div className="m-2 ">
                                         <div style={{width:'300px',margin:'auto'}}>
-                                                    <img className="img-thumbnail img-fluid" src="http://shopsmartcart.reflomsolutions.com/webimg/delivery1.jpg" />                  
+                                                    <img className="img-thumbnail img-fluid" src="https://shopsmartcart.reflomsolutions.com/webimg/delivery1.jpg" />                  
                                         </div>
                                         
                                         <div className="text-center mt-4"><h1>DELIVER ON THE SAME DAY</h1></div>

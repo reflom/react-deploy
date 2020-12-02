@@ -565,7 +565,7 @@ alert("invalid emial")
       url: 'https://www.shopsmartcart.reflomsolutions.com/public/api/register',
       headers: {
         "Content-Type": "application/json",
-        'Access-Control-Allow-Origin': '*'
+        
       },
       data: data
     };
@@ -602,7 +602,7 @@ function facebookSignin(res)
   
        }
   
-     axios.post('https://shopsmartcart.reflomsolutions.com/public/api/register', responseFacebook)
+     axios.post('https://www.shopsmartcart.reflomsolutions.com/public/api/register', responseFacebook)
          .then((result) => {
            let responseJson = result;
            console.log(result.data.name);
@@ -631,7 +631,7 @@ function googleSignin(res) {
   
        };
   
-       axios.post('https://shopsmartcart.reflomsolutions.com/public/api/register', googleresponse).then((result) => {
+       axios.post('https://www.shopsmartcart.reflomsolutions.com/public/api/register', googleresponse).then((result) => {
   
          let responseJson = result;
   

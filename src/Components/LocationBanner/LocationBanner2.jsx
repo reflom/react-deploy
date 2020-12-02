@@ -137,14 +137,16 @@ class LocationBanner2 extends React.Component {
 
   handleChange(event) {
 
-    const axios = require('axios');
+    // const axios = require('axios');
 
-    axios.get("https://www.shopsmartcart.reflomsolutions.com/public/api_city")
-      .then(res => {
-        // this.state.citys = res.data;
-        this.setState({ citys: res.data })
+    // axios.get("http://www.shopsmartcart.reflomsolutions.com/public/api_city")
+    //   .then(res => {
+    //     // this.state.citys = res.data;
+    //     this.setState({ citys: res.data })
 
-      })
+    //   })
+
+    console.log("hello")
 
 
 
