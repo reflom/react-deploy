@@ -547,7 +547,7 @@ function handleSubmit(e){
 
  }else if(!EmailValidator.validate(email)){
   e.preventDefault();
-alert("invalid emial")
+alert("invalid email")
  
 }else{
     e.preventDefault();
@@ -590,37 +590,94 @@ alert("invalid emial")
 }
 
 
-function facebookSignin(res) 
-{
+// function facebookSignin(res) 
+// {
  
       
-  const responseFacebook = {
-         name: res.name,
-         email: res.email,
-         token: res.facebookID,
-         ProviderId: 'Facebook'
+//   // const responseFacebook = {
+//   //        name: res.name,
+//   //        email: res.email,
+//   //       provider: 'Facebook',
+//   //       provider_id: res.facebookID,
+//   //      }
+
+//        var FormData = require('form-data');
+//        var data = new FormData();
+           
+//             data.append('name',res.name);
+//             data.append('email',res.email);
+//             data.append('provider',res.facebookID );
+//             data.append('provider_id',res.facebookID);
   
-       }
+//      axios.post('https://www.shopsmartcart.reflomsolutions.com/public/api/register', data)
+         
+//      .then((result) => {
+//            let responseJson = result;
+//            console.log(result.data.name);
+//            alert("data");
+//           //  sessionStorage.setItem("userData", JSON.stringify(result));
   
-     axios.post('https://www.shopsmartcart.reflomsolutions.com/public/api/register', responseFacebook)
-         .then((result) => {
-           let responseJson = result;
-           console.log(result.data.name);
-           alert("data");
-           sessionStorage.setItem("userData", JSON.stringify(result));
   
-  
-         }).then(function (response) {
+//          }).then(function (response) {
   
         
-         setFacebookData({ facebookData: response });
-         console.log(facebookData);
-         history.replace('/home');
+//          setFacebookData({ facebookData: response });
+//          console.log(facebookData);
+//          history.replace('/home');
          
   
-         })
+//          })
   
-}
+// }
+
+function facebookSignin(res){
+
+      
+
+        var FormData = require('form-data');
+          var data = new FormData();
+           
+            data.append('name',res.name);
+            data.append('email',res.email);
+            data.append('provider',res.facebookID );
+            data.append('provider_id',res.facebookID);
+
+            var config = {
+              method: 'post',
+              url: 'https://shopsmartcart.reflomsolutions.com/public/callback/facebook',
+              headers: {
+                "Content-Type": "application/json",
+                
+              },
+              data: data
+            };
+
+            axios(config)
+            .then(function (response) {
+             
+              console.log(response);
+      
+              alert("registeration successfully");
+              history.push('/home');
+              
+            })
+          
+            .catch(function (error) {
+              console.log(error);
+            });
+           
+        }
+
+
+
+
+
+
+
+
+
+
+
 
 function googleSignin(res) {
        const googleresponse = {
@@ -656,7 +713,7 @@ const responseFacebook = (response) => {
   console.log(response);
   var res = response.profileObj;
   console.log(res);
- facebookSignin(response)
+  facebookSignin(response)
  
 }
 

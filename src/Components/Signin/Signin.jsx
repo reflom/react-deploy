@@ -656,39 +656,37 @@ function facebookSignin(res)
          console.log(facebookData);
 
         
-         
-  
-         })
+    })
   
 }
 
-function googleSignin(res) {
-       const googleresponse = {
-         name: res.profileObj.name,
-         email: res.profileObj.email,
-         provider:'google',
-         provider_id :res.googleId
+// function googleSignin(res) {
+//        const googleresponse = {
+//          name: res.profileObj.name,
+//          email: res.profileObj.email,
+//          provider:'google',
+//          provider_id :res.googleId
         
 
-};
+// };
   
-       axios.post('https://shopsmartcart.reflomsolutions.com/public/api/login', googleresponse).then((result) => {
+//        axios.get('https://www.shopsmartcart.reflomsolutions.com/public/api/login', googleresponse).then((result) => {
   
-         let responseJson = result;
+//          let responseJson = result;
   
   
-         sessionStorage.setItem("userData", JSON.stringify(result));
+//         //  sessionStorage.setItem("userData", JSON.stringify(result));
   
-       }).then(function (response) {
+//        }).then(function (response) {
 
-         setgoogleData({ googleData: response });
-         console.log(googleData)
+//          setgoogleData({ googleData: response });
+//          console.log(googleData)
        
         
   
   
-       })
-     }
+//        })
+//      }
 
 
 
