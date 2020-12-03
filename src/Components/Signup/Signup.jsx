@@ -640,14 +640,15 @@ alert("invalid email")
 
 function facebookSignin(res){
   
-  var para1=res.graphDomain
-  var para2=res.id      
+       
 
  
 
         var FormData = require('form-data');
           var data = new FormData();
-           
+          var para1=res.graphDomain;
+          var para2=res.id;
+          
             data.append('name',res.name);
             data.append('email',res.email);
             data.append('provider',res.graphDomain );
