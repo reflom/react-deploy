@@ -743,7 +743,7 @@ function googleSignin(res) {
 
   var config = {
     method: 'post',
-    url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+provider_id+'/'+provider`,
+    url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+provider_id+'/'+provider,
     headers: {
       "Content-Type": "application/json",
       
