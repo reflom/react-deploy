@@ -643,6 +643,9 @@ function facebookSignin(res){
   var provider=res.graphDomain
   var provider_id=res.id      
 
+  console.log(res.graphDomain);
+  console.log(res.id);
+
         var FormData = require('form-data');
           var data = new FormData();
            
@@ -726,7 +729,7 @@ function googleSignin(res) {
  
   var provider='Google';
   var provider_id=res.googleId;    
- 
+  console.log(res.googleId);
   var FormData = require('form-data');
   var data = new FormData();
   data.append('name',res.name);
