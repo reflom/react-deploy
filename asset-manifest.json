@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Shopsmartcart1/static/css/main.e8a9b95b.chunk.css",
-    "main.js": "/Shopsmartcart1/static/js/main.1853f1ea.chunk.js",
-    "main.js.map": "/Shopsmartcart1/static/js/main.1853f1ea.chunk.js.map",
+    "main.js": "/Shopsmartcart1/static/js/main.054f5503.chunk.js",
+    "main.js.map": "/Shopsmartcart1/static/js/main.054f5503.chunk.js.map",
     "runtime-main.js": "/Shopsmartcart1/static/js/runtime-main.fb75272e.js",
     "runtime-main.js.map": "/Shopsmartcart1/static/js/runtime-main.fb75272e.js.map",
     "static/css/2.fe2d3769.chunk.css": "/Shopsmartcart1/static/css/2.fe2d3769.chunk.css",
     "static/js/2.70677881.chunk.js": "/Shopsmartcart1/static/js/2.70677881.chunk.js",
     "static/js/2.70677881.chunk.js.map": "/Shopsmartcart1/static/js/2.70677881.chunk.js.map",
     "index.html": "/Shopsmartcart1/index.html",
-    "precache-manifest.0bb4d1f327b3b6c2ab3311b642cb4a78.js": "/Shopsmartcart1/precache-manifest.0bb4d1f327b3b6c2ab3311b642cb4a78.js",
+    "precache-manifest.ae09343b8fc633bdb859077a9f0ec783.js": "/Shopsmartcart1/precache-manifest.ae09343b8fc633bdb859077a9f0ec783.js",
     "service-worker.js": "/Shopsmartcart1/service-worker.js",
     "static/css/2.fe2d3769.chunk.css.map": "/Shopsmartcart1/static/css/2.fe2d3769.chunk.css.map",
     "static/css/main.e8a9b95b.chunk.css.map": "/Shopsmartcart1/static/css/main.e8a9b95b.chunk.css.map",
@@ -23,6 +23,6 @@
     "static/css/2.fe2d3769.chunk.css",
     "static/js/2.70677881.chunk.js",
     "static/css/main.e8a9b95b.chunk.css",
-    "static/js/main.1853f1ea.chunk.js"
+    "static/js/main.054f5503.chunk.js"
   ]
 }
