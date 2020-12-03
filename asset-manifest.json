@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/Shopsmartcart1/static/css/main.e8a9b95b.chunk.css",
-    "main.js": "/Shopsmartcart1/static/js/main.2291d661.chunk.js",
-    "main.js.map": "/Shopsmartcart1/static/js/main.2291d661.chunk.js.map",
+    "main.js": "/Shopsmartcart1/static/js/main.9684a7db.chunk.js",
+    "main.js.map": "/Shopsmartcart1/static/js/main.9684a7db.chunk.js.map",
     "runtime-main.js": "/Shopsmartcart1/static/js/runtime-main.fb75272e.js",
     "runtime-main.js.map": "/Shopsmartcart1/static/js/runtime-main.fb75272e.js.map",
     "static/css/2.fe2d3769.chunk.css": "/Shopsmartcart1/static/css/2.fe2d3769.chunk.css",
-    "static/js/2.b3f12007.chunk.js": "/Shopsmartcart1/static/js/2.b3f12007.chunk.js",
-    "static/js/2.b3f12007.chunk.js.map": "/Shopsmartcart1/static/js/2.b3f12007.chunk.js.map",
+    "static/js/2.70677881.chunk.js": "/Shopsmartcart1/static/js/2.70677881.chunk.js",
+    "static/js/2.70677881.chunk.js.map": "/Shopsmartcart1/static/js/2.70677881.chunk.js.map",
     "index.html": "/Shopsmartcart1/index.html",
-    "precache-manifest.ac78b33e9eb57f648a02f0325ef9b2ac.js": "/Shopsmartcart1/precache-manifest.ac78b33e9eb57f648a02f0325ef9b2ac.js",
+    "precache-manifest.d925e8c8a12066e2d8d24b7d249e7834.js": "/Shopsmartcart1/precache-manifest.d925e8c8a12066e2d8d24b7d249e7834.js",
     "service-worker.js": "/Shopsmartcart1/service-worker.js",
     "static/css/2.fe2d3769.chunk.css.map": "/Shopsmartcart1/static/css/2.fe2d3769.chunk.css.map",
     "static/css/main.e8a9b95b.chunk.css.map": "/Shopsmartcart1/static/css/main.e8a9b95b.chunk.css.map",
-    "static/js/2.b3f12007.chunk.js.LICENSE.txt": "/Shopsmartcart1/static/js/2.b3f12007.chunk.js.LICENSE.txt",
+    "static/js/2.70677881.chunk.js.LICENSE.txt": "/Shopsmartcart1/static/js/2.70677881.chunk.js.LICENSE.txt",
     "static/media/mdb.css": "/Shopsmartcart1/static/media/arrow_right.8ef6a08c.svg",
     "static/media/semantic.min.css": "/Shopsmartcart1/static/media/outline-icons.ef60a4f6.woff",
     "static/media/all.min.css": "/Shopsmartcart1/static/media/fa-solid-900.8e1ed89b.woff2"
@@ -21,8 +21,8 @@
   "entrypoints": [
     "static/js/runtime-main.fb75272e.js",
     "static/css/2.fe2d3769.chunk.css",
-    "static/js/2.b3f12007.chunk.js",
+    "static/js/2.70677881.chunk.js",
     "static/css/main.e8a9b95b.chunk.css",
-    "static/js/main.2291d661.chunk.js"
+    "static/js/main.9684a7db.chunk.js"
   ]
 }
