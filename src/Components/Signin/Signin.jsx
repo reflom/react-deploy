@@ -623,42 +623,90 @@ else{
 
 }
 
+ function facebookSignin(res)
+ {
+  var axios = require('axios');
+  var FormData = require('form-data');
+  var data = new FormData();
+  data.append('name', res.name);
+  data.append('email',res.email );
+  data.append('provider',res.graphDomain);
+  data.append('provider_id',res.id );
  
+  
+  var config = {
+    method: 'post',
+    url: 'https://www.shopsmartcart.reflomsolutions.com/public/api/register',
+    headers: {
+      "Content-Type": "application/json",
+     
+    },
+    data: data
+  };
+
+  axios(config)
+  .then(function (response) {
+
+  
+   if(response.data.Status =='Failed'){
+        console.log(response);
+         alert("INVALID EMAIL ID AND PASSWORD !!")
+        
+
+   }else{
+    console.log(response);
+    alert("login successful ");
+    history.replace('/home');
+   }
+   
+
+  })
+
+  .catch(function (error) {
+    console.log(error);
+  });
+}
+
+
  
 
 
 
-function facebookSignin(res) 
-{
+// function facebookSignin(res) 
+// {
 
-  const responseFacebook = {
-        name: res.name,
-        email: res.email,
-        provider: res.graphDomain,
-        provider_id :res.userID,
-        remember_token: res.accessToken
-        //  token: res.facebookID,
-       }
+//   const responseFacebook = {
+//         name: res.name,
+//         email: res.email,
+//         provider: res.graphDomain,
+//         provider_id :res.userID,
+//         remember_token: res.accessToken
+//         //  token: res.facebookID,
+//        }
   
-     axios.post('https://shopsmartcart.reflomsolutions.com/public/api/register', responseFacebook)
-         .then((result) => {
-           let responseJson = result;
-           console.log(result.data.name);
-           alert("login Successfull");
-          sessionStorage.setItem("userData", JSON.stringify(result));
+//      axios.post('https://shopsmartcart.reflomsolutions.com/public/api/login', responseFacebook)
+//          .then((result) => {
+//            let responseJson = result;
+//            console.log(result.data.name);
+//            alert("login Successfull");
+//           sessionStorage.setItem("userData", JSON.stringify(result));
   
   
-         }).then(function (response) {
+//          }).then(function (response) {
   
          
-         setFacebookData({ facebookData: response });
+//          setFacebookData({ facebookData: response });
         
-         console.log(facebookData);
+//          console.log(facebookData);
 
         
-    })
+//     })
   
-}
+// }
+
+
+
+
 
 // function googleSignin(res) {
 //        const googleresponse = {

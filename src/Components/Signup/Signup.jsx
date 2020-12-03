@@ -571,18 +571,26 @@ alert("invalid email")
     };
     
     axios(config)
-      .then(function (response) {
-       
-        console.log(response);
+    .then(function (response) {
 
-        alert("registeration successfully");
-        history.push('/home');
-        
-      })
-    
-      .catch(function (error) {
-        console.log(error);
-      });
+  
+      if(response.data.Status =='Failed'){
+           console.log(response);
+            alert("INVALID EMAIL ID AND PASSWORD !!")
+           
+   
+      }else{
+       console.log(response);
+       alert("login successful ");
+       history.replace('/home');
+      }
+      
+   
+     })
+   
+     .catch(function (error) {
+       console.log(error);
+     });
      
   }
 
@@ -631,20 +639,21 @@ alert("invalid email")
 // }
 
 function facebookSignin(res){
-
-      
+  
+  var provider=res.graphDomain
+  var provider_id=res.id      
 
         var FormData = require('form-data');
           var data = new FormData();
            
             data.append('name',res.name);
             data.append('email',res.email);
-            data.append('provider',res.facebookID );
-            data.append('provider_id',res.facebookID);
-
+            data.append('provider',res.graphDomain );
+            data.append('provider_id',res.id);
+           
             var config = {
               method: 'post',
-              url: 'https://shopsmartcart.reflomsolutions.com/public/callback/facebook',
+              url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+{provider_id}+'/'+{provider},
               headers: {
                 "Content-Type": "application/json",
                 
@@ -654,17 +663,26 @@ function facebookSignin(res){
 
             axios(config)
             .then(function (response) {
-             
-              console.log(response);
-      
-              alert("registeration successfully");
-              history.push('/home');
+
+  
+              if(response.data.Status =='Failed'){
+                   console.log(response);
+                    alert("INVALID EMAIL ID AND PASSWORD !!")
+                   
+           
+              }else{
+               console.log(response);
+               alert("login successful ");
+               history.replace('/home');
+              }
               
-            })
-          
-            .catch(function (error) {
-              console.log(error);
-            });
+           
+             })
+           
+             .catch(function (error) {
+               console.log(error);
+             });
+            
            
         }
 
@@ -679,30 +697,77 @@ function facebookSignin(res){
 
 
 
-function googleSignin(res) {
-       const googleresponse = {
-         Name: res.profileObj.name,
-         email: res.profileObj.email,
-         token: res.googleId,
-         ProviderId: 'Google'
+// function googleSignin(res) {
+//        const googleresponse = {
+//          Name: res.profileObj.name,
+//          email: res.profileObj.email,
+//          token: res.googleId,
+//          ProviderId: 'Google'
   
-       };
+//        };
   
-       axios.post('https://www.shopsmartcart.reflomsolutions.com/public/api/register', googleresponse).then((result) => {
+//        axios.post('https://www.shopsmartcart.reflomsolutions.com/public/api/register', googleresponse).then((result) => {
   
-         let responseJson = result;
+//          let responseJson = result;
   
   
-         sessionStorage.setItem("userData", JSON.stringify(result));
+//          sessionStorage.setItem("userData", JSON.stringify(result));
   
-       }).then(function (response) {
+//        }).then(function (response) {
 
-         setgoogleData({ googleData: response });
-         console.log(googleData)
-         history.replace('/home');
+//          setgoogleData({ googleData: response });
+//          console.log(googleData)
+//          history.replace('/home');
         
-})
-     }
+// })
+//      }
+
+function googleSignin(res) {
+ 
+  var provider='Google';
+  var provider_id=res.googleId;    
+ 
+  var FormData = require('form-data');
+  var data = new FormData();
+  data.append('name',res.name);
+  data.append('email',res.email);
+  data.append('provider', Google );
+  data.append('provider_id',res.googleId);
+
+  var config = {
+    method: 'post',
+    url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+{provider_id}+'/'+{provider},
+    headers: {
+      "Content-Type": "application/json",
+      
+    },
+    data: data
+  };
+
+  axios(config)
+  .then(function (response) {
+
+
+    if(response.data.Status =='Failed'){
+         console.log(response);
+          alert("INVALID EMAIL ID AND PASSWORD !!")
+         
+ 
+    }else{
+     console.log(response);
+     alert("login successful ");
+     history.replace('/home');
+    }
+    
+ 
+   })
+ 
+   .catch(function (error) {
+     console.log(error);
+   });
+
+
+}
 
 
 
