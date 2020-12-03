@@ -737,7 +737,7 @@ function googleSignin(res) {
   var data = new FormData();
   data.append('name',res.name);
   data.append('email',res.email);
-  data.append('provider', Google );
+  data.append('provider',' google ');
   data.append('provider_id',res.googleId);
 
   var config = {
