@@ -646,17 +646,18 @@ function facebookSignin(res){
 
         var FormData = require('form-data');
           var data = new FormData();
-          var para1=JSON.parse(res.graphDomain);
-          var para2=JSON.parse(res.id);
-
+        //   var para1=JSON.parse(res.graphDomain);
+        //   var para2=JSON.parse(res.id);
+		 
             data.append('name',res.name);
             data.append('email',res.email);
             data.append('provider',res.graphDomain );
             data.append('provider_id',res.id);
-           
+            var para1=res.graphDomain;
+         	var para2=res.id;
             var config = {
               method: 'post',
-              url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+{para1}+'/'+{para2},
+              url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+para2+'/'+para1,
               headers: {
                 "Content-Type": "application/json",
                 
@@ -730,7 +731,7 @@ function facebookSignin(res){
 
 function googleSignin(res) {
  
-  var provider='Google';
+  var provider='google';
   var provider_id=res.googleId;    
   console.log(res.googleId);
   var FormData = require('form-data');
@@ -742,7 +743,7 @@ function googleSignin(res) {
 
   var config = {
     method: 'post',
-    url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+{provider_id}+'/'+{provider},
+    url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+provider_id+'/'+provider`,
     headers: {
       "Content-Type": "application/json",
       
