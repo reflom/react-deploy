@@ -640,11 +640,10 @@ alert("invalid email")
 
 function facebookSignin(res){
   
-  var provider=res.graphDomain
-  var provider_id=res.id      
+  var para1=res.graphDomain
+  var para2=res.id      
 
-  console.log(res.graphDomain);
-  console.log(res.id);
+ 
 
         var FormData = require('form-data');
           var data = new FormData();
@@ -656,7 +655,7 @@ function facebookSignin(res){
            
             var config = {
               method: 'post',
-              url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+{provider_id}+'/'+{provider},
+              url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+{para1}+'/'+{para2},
               headers: {
                 "Content-Type": "application/json",
                 
@@ -685,6 +684,9 @@ function facebookSignin(res){
              .catch(function (error) {
                console.log(error);
              });
+
+             console.log(res.graphDomain);
+             console.log(res.id);
             
            
         }
