@@ -889,7 +889,7 @@ const responseGoogle = (response) => {
             appId="2421201141518623"
             autoLoad={true}
             fields="name,email,picture"
-            callback={this.responseFacebook}
+            callback={responseFacebook}
           />
 
         </center>
