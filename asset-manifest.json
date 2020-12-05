@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/Shopsmartcart1/static/css/main.e8a9b95b.chunk.css",
-    "main.js": "/Shopsmartcart1/static/js/main.4fd7177d.chunk.js",
-    "main.js.map": "/Shopsmartcart1/static/js/main.4fd7177d.chunk.js.map",
-    "runtime-main.js": "/Shopsmartcart1/static/js/runtime-main.fb75272e.js",
-    "runtime-main.js.map": "/Shopsmartcart1/static/js/runtime-main.fb75272e.js.map",
-    "static/css/2.fe2d3769.chunk.css": "/Shopsmartcart1/static/css/2.fe2d3769.chunk.css",
-    "static/js/2.70677881.chunk.js": "/Shopsmartcart1/static/js/2.70677881.chunk.js",
-    "static/js/2.70677881.chunk.js.map": "/Shopsmartcart1/static/js/2.70677881.chunk.js.map",
-    "index.html": "/Shopsmartcart1/index.html",
-    "precache-manifest.4c64dd579f3696aa5a3aa3a0f74ce955.js": "/Shopsmartcart1/precache-manifest.4c64dd579f3696aa5a3aa3a0f74ce955.js",
-    "service-worker.js": "/Shopsmartcart1/service-worker.js",
-    "static/css/2.fe2d3769.chunk.css.map": "/Shopsmartcart1/static/css/2.fe2d3769.chunk.css.map",
-    "static/css/main.e8a9b95b.chunk.css.map": "/Shopsmartcart1/static/css/main.e8a9b95b.chunk.css.map",
-    "static/js/2.70677881.chunk.js.LICENSE.txt": "/Shopsmartcart1/static/js/2.70677881.chunk.js.LICENSE.txt",
-    "static/media/mdb.css": "/Shopsmartcart1/static/media/arrow_right.8ef6a08c.svg",
-    "static/media/semantic.min.css": "/Shopsmartcart1/static/media/outline-icons.ef60a4f6.woff",
-    "static/media/all.min.css": "/Shopsmartcart1/static/media/fa-solid-900.8e1ed89b.woff2"
+    "main.css": "/Shopsmartcart/static/css/main.e8a9b95b.chunk.css",
+    "main.js": "/Shopsmartcart/static/js/main.3b34f061.chunk.js",
+    "main.js.map": "/Shopsmartcart/static/js/main.3b34f061.chunk.js.map",
+    "runtime-main.js": "/Shopsmartcart/static/js/runtime-main.94c96c10.js",
+    "runtime-main.js.map": "/Shopsmartcart/static/js/runtime-main.94c96c10.js.map",
+    "static/css/2.c78a33da.chunk.css": "/Shopsmartcart/static/css/2.c78a33da.chunk.css",
+    "static/js/2.cf4655b3.chunk.js": "/Shopsmartcart/static/js/2.cf4655b3.chunk.js",
+    "static/js/2.cf4655b3.chunk.js.map": "/Shopsmartcart/static/js/2.cf4655b3.chunk.js.map",
+    "index.html": "/Shopsmartcart/index.html",
+    "precache-manifest.863c9ffae473cfb23f13889a96185209.js": "/Shopsmartcart/precache-manifest.863c9ffae473cfb23f13889a96185209.js",
+    "service-worker.js": "/Shopsmartcart/service-worker.js",
+    "static/css/2.c78a33da.chunk.css.map": "/Shopsmartcart/static/css/2.c78a33da.chunk.css.map",
+    "static/css/main.e8a9b95b.chunk.css.map": "/Shopsmartcart/static/css/main.e8a9b95b.chunk.css.map",
+    "static/js/2.cf4655b3.chunk.js.LICENSE.txt": "/Shopsmartcart/static/js/2.cf4655b3.chunk.js.LICENSE.txt",
+    "static/media/mdb.css": "/Shopsmartcart/static/media/arrow_right.8ef6a08c.svg",
+    "static/media/semantic.min.css": "/Shopsmartcart/static/media/outline-icons.ef60a4f6.woff",
+    "static/media/all.min.css": "/Shopsmartcart/static/media/fa-solid-900.8e1ed89b.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.fb75272e.js",
-    "static/css/2.fe2d3769.chunk.css",
-    "static/js/2.70677881.chunk.js",
+    "static/js/runtime-main.94c96c10.js",
+    "static/css/2.c78a33da.chunk.css",
+    "static/js/2.cf4655b3.chunk.js",
     "static/css/main.e8a9b95b.chunk.css",
-    "static/js/main.4fd7177d.chunk.js"
+    "static/js/main.3b34f061.chunk.js"
   ]
 }
