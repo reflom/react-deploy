@@ -734,6 +734,7 @@ function googleSignin(res) {
   var provider='google';
   var provider_id=res.googleId;    
   console.log(res);
+  console.log(res.name);
   var FormData = require('form-data');
   var data = new FormData();
   data.append('name',res.name);
