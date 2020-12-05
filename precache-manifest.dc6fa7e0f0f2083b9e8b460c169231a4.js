@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "09dff6560534a9ad39fa38dfa673adfb",
+    "revision": "16b244af3a12d7381c153e0199fe5883",
     "url": "/shopsmartcart1/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/shopsmartcart1/static/css/2.1a675c98.chunk.css"
   },
   {
-    "revision": "a61221ff59f9ec4359c2",
+    "revision": "a7f036993fddcf21292b",
     "url": "/shopsmartcart1/static/css/main.e8a9b95b.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/shopsmartcart1/static/js/2.988f9688.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a61221ff59f9ec4359c2",
-    "url": "/shopsmartcart1/static/js/main.5859ee09.chunk.js"
+    "revision": "a7f036993fddcf21292b",
+    "url": "/shopsmartcart1/static/js/main.4930276d.chunk.js"
   },
   {
     "revision": "c00bc38372c74f6c3bcb",
