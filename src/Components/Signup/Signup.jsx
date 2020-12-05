@@ -642,9 +642,7 @@ function facebookSignin(res){
   
        
 
- 
-
-        var FormData = require('form-data');
+var FormData = require('form-data');
           var data = new FormData();
        
             data.append('name',res.name);
@@ -668,7 +666,8 @@ function facebookSignin(res){
   
               if(response.data.Status =='Failed'){
                    console.log(response);
-                    alert("INVALID EMAIL ID AND PASSWORD !!")
+                    alert("Already Registered Please Sign-in !");
+                    
                    
            
               }else{
@@ -684,8 +683,7 @@ function facebookSignin(res){
                console.log(error);
              });
 
-             console.log(res.graphDomain);
-             console.log(res.id);
+             
             
            
         }
@@ -729,9 +727,6 @@ function facebookSignin(res){
 function googleSignin(res) {
  
   var provider='google';
-  var provider_id=res.googleId;    
-  console.log(res);
-  console.log(res.name);
   var FormData = require('form-data');
   var data = new FormData();
   data.append('name',res.name);
@@ -780,6 +775,7 @@ function googleSignin(res) {
 
 const responseFacebook = (response) => {
 
+  console.log(response);
   var res = response.profileObj;
   console.log(res);
   facebookSignin(res);
@@ -892,8 +888,7 @@ const responseGoogle = (response) => {
             className="facebook"
             appId="2421201141518623"
             callback={responseFacebook}
-            cookiePolicy={'single_host_origin'}
-
+            
           />
 
         </center>
