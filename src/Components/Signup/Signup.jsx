@@ -755,7 +755,7 @@ function googleSignin(res) {
  
     }else{
      console.log(response);
-     alert("login successful ");
+     alert("Register Successfull");
      history.replace('/home');
     }
     
@@ -886,7 +886,7 @@ const responseGoogle = (response) => {
         <center>
           <FacebookLogin
             className="facebook"
-            appId="2421201141518623"
+            appId="3289839974459022"
             callback={responseFacebook}
           />
 
