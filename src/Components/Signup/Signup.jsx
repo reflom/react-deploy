@@ -744,7 +744,7 @@ function googleSignin(res) {
 
   var config = {
     method: 'post',
-    url:  `https://shopsmartcart.reflomsolutions.com/public/api/createuser/`+res.googleId+'/'+res.name +'/'+ res.email+'/'+ provider,
+    url:  `https://shopsmartcart.reflomsolutions.com/public/api/createuser/`+res.googleId+'/'+res.name+'/'+res.email+'/'+ provider,
     headers: {
       "Content-Type": "application/json",
       
@@ -796,7 +796,7 @@ const responseGoogle = (response) => {
        console.log(response);
         console.log(response);
         var res = response.profileObj;
-       googleSignin(response);
+       googleSignin(res);
  
  
 }
