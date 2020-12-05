@@ -623,49 +623,51 @@ else{
 
 }
 
- function facebookSignin(res)
- {
-  var axios = require('axios');
-  var FormData = require('form-data');
-  var data = new FormData();
-  data.append('name', res.name);
-  data.append('email',res.email );
-  data.append('provider',res.graphDomain);
-  data.append('provider_id',res.id );
+//  function facebookSignin(res)
+//  {
+//   var axios = require('axios');
+//   var FormData = require('form-data');
+//   var data = new FormData();
+//   data.append('name', res.name);
+//   data.append('email',res.email );
+//   data.append('provider',res.graphDomain);
+//   data.append('provider_id',res.id );
  
   
-  var config = {
-    method: 'post',
-    url: 'https://www.shopsmartcart.reflomsolutions.com/public/api/register',
-    headers: {
-      "Content-Type": "application/json",
+//   var config = {
+//     method: 'post',
+//     url: 'https://www.shopsmartcart.reflomsolutions.com/public/api/register',
+//     headers: {
+//       "Content-Type": "application/json",
      
-    },
-    data: data
-  };
+//     },
+//     data: data
+//   };
 
-  axios(config)
-  .then(function (response) {
+//   axios(config)
+//   .then(function (response) {
 
   
-   if(response.data.Status =='Failed'){
-        console.log(response);
-         alert("INVALID EMAIL ID AND PASSWORD !!")
+//    if(response.data.Status =='Failed'){
+//         console.log(response);
+//          alert("INVALID EMAIL ID AND PASSWORD !!")
         
 
-   }else{
-    console.log(response);
-    alert("login successful ");
-    history.replace('/home');
-   }
+//    }else{
+//     console.log(response);
+//     alert("login successful ");
+//     history.replace('/home');
+//    }
    
 
-  })
+//   })
 
-  .catch(function (error) {
-    console.log(error);
-  });
-}
+//   .catch(function (error) {
+//     console.log(error);
+//   });
+// }
+
+// this one !
 
 
  
@@ -750,7 +752,7 @@ const responseFacebook = (response) => {
          console.log(response);
          var res = response.profileObj;
          console.log(res);
-        facebookSignin(response)
+        // facebookSignin(response)
         
        }
 

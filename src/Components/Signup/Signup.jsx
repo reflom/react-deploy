@@ -755,7 +755,7 @@ function googleSignin(res) {
 
     if(response.data.Status =='Failed'){
          console.log(response);
-          alert("INVALID EMAIL ID AND PASSWORD !!")
+          alert("TRY AGAIN !")
          
  
     }else{
@@ -780,17 +780,15 @@ function googleSignin(res) {
 
 const responseFacebook = (response) => {
 
-  console.log(response);
   var res = response.profileObj;
   console.log(res);
-  facebookSignin(response)
+  facebookSignin(res);
  
 }
 
 
 const responseGoogle = (response) => {
 
-       console.log(response);
         console.log(response);
         var res = response.profileObj;
        googleSignin(res);
