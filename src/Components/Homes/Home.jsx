@@ -6,8 +6,8 @@ import Categoriesslider from '../Categoriesslider/Categoriesslider';
 import Howitworks from '../Howitworks/Howitworks';
 import Storeslider from '../Storeslider/Storeslider';
 import Becomeshopper from '../Becomeshopper/Becomeshopper';
-import LocationBanner from '../LocationBanner/LocationBanner';
 import LocationBanner2 from '../LocationBanner/LocationBanner2';
+
 import { Dots } from 'react-activity';
 import 'react-activity/dist/react-activity.css';
 

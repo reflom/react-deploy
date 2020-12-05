@@ -571,7 +571,7 @@ alert("invalid email")
     };
     
     axios(config)
-    .then(function (response) {
+    .then(function (response){
 
   
       if(response.data.Status =='Failed'){
@@ -743,7 +743,7 @@ function googleSignin(res) {
 
   var config = {
     method: 'post',
-    url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+provider_id+'/'+provider,
+    url:  `https://shopsmartcart.reflomsolutions.com/public/api/createuser/`+res+'/'+provider,
     headers: {
       "Content-Type": "application/json",
       

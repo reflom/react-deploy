@@ -4,7 +4,7 @@ import React from 'react';
 const Notificationbell=()=>{
     return(
         <>
-        <div class="ui card">
+        <div class="ui card" style={{margin:'0px'}}>
   <div class="content">
     <i class="right floated like icon"></i>
     <i class="right floated star icon"></i>

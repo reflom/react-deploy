@@ -593,7 +593,7 @@ class Header extends React.Component{
      <div className="navbar-collapse navicons justify-content-end col-md-12" style={{display:'flex'}}>
 
      <div  id="bellicon"style={{color:'black'}}>
-                <Notification/>
+                <Notification style={{zIndex:'1'}}/>
      </div>
 
 

@@ -80,6 +80,7 @@ export default function Notification() {
                     transition 
                     disablePortal 
                     placement="bottom-end"
+                    style={{zIndex:'1'}}
                     
                 >
                     {({ TransitionProps, placement }) => (
