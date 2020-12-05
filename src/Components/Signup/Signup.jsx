@@ -646,18 +646,15 @@ function facebookSignin(res){
 
         var FormData = require('form-data');
           var data = new FormData();
-        //   var para1=JSON.parse(res.graphDomain);
-        //   var para2=JSON.parse(res.id);
-		 
+       
             data.append('name',res.name);
             data.append('email',res.email);
             data.append('provider',res.graphDomain );
             data.append('provider_id',res.id);
-            var para1=res.graphDomain;
-         	var para2=res.id;
+          
             var config = {
               method: 'post',
-              url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+para2+'/'+para1,
+              url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+res.id+'/'+res.name+'/'+res.email+'/'+res.graphDomain,
               headers: {
                 "Content-Type": "application/json",
                 
