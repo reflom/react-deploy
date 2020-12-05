@@ -887,8 +887,9 @@ const responseGoogle = (response) => {
           <FacebookLogin
             className="facebook"
             appId="2421201141518623"
-            callback={responseFacebook}
-            
+            autoLoad={true}
+            fields="name,email,picture"
+            callback={this.responseFacebook}
           />
 
         </center>
