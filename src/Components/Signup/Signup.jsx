@@ -638,21 +638,20 @@ alert("invalid email")
   
 // }
 
-function facebookSignin(res){
+function facebookSignin(response){
   
-       
-
-var FormData = require('form-data');
+        var FormData = require('form-data');
           var data = new FormData();
-       
-            data.append('name',res.name);
-            data.append('email',res.email);
-            data.append('provider',res.graphDomain );
-            data.append('provider_id',res.id);
+          var email="kkshshdhaskhh@gmail.com";
+       console.log(response.name);
+            data.append('name',response.name);
+            // data.append('email','kkshshdhaskhh@gmail.com');
+            data.append('provider',response.graphDomain );
+            data.append('provider_id',response.id);
           
             var config = {
               method: 'post',
-              url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+res.id+'/'+res.name+'/'+res.email+'/'+res.graphDomain,
+              url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+response.id+'/'+response.name+'/'+email+'/'+response.graphDomain,
               headers: {
                 "Content-Type": "application/json",
                 
@@ -728,6 +727,7 @@ function googleSignin(res) {
  
   var provider='google';
   var FormData = require('form-data');
+ 
   var data = new FormData();
   data.append('name',res.name);
   data.append('email',res.email);
@@ -776,9 +776,7 @@ function googleSignin(res) {
 const responseFacebook = (response) => {
 
   console.log(response);
-  var res = response.profileObj;
-  console.log(res);
-  facebookSignin(res);
+  facebookSignin(response);
  
 }
 
@@ -787,7 +785,7 @@ const responseGoogle = (response) => {
 
         console.log(response);
         var res = response.profileObj;
-       googleSignin(res);
+         googleSignin(res);
  
  
 }
@@ -887,6 +885,7 @@ const responseGoogle = (response) => {
           <FacebookLogin
             className="facebook"
             appId="3289839974459022"
+            autoLoad={false}
             callback={responseFacebook}
           />
 

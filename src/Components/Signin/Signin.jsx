@@ -623,15 +623,15 @@ else{
 
 }
 
-//  function facebookSignin(res)
+//  function facebookSignin(response)
 //  {
 //   var axios = require('axios');
 //   var FormData = require('form-data');
 //   var data = new FormData();
-//   data.append('name', res.name);
-//   data.append('email',res.email );
-//   data.append('provider',res.graphDomain);
-//   data.append('provider_id',res.id );
+//   data.append('name', response.name);
+//   data.append('email',response.email );
+//   data.append('provider',response.graphDomain);
+//   data.append('provider_id',response.id );
  
   
 //   var config = {
@@ -666,6 +666,56 @@ else{
 //     console.log(error);
 //   });
 // }
+
+
+function facebookSignin(response){
+  
+  var FormData = require('form-data');
+    var data = new FormData();
+      console.log(response.name);
+      console.log(response.email);
+      data.append('name',response.name);
+      data.append('email',response.email);
+      data.append('provider',response.graphDomain );
+      data.append('provider_id',response.id);
+    
+      var config = {
+        method: 'post',
+        url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+response.id+'/'+response.name+'/'+response.email+'/'+response.graphDomain,
+        headers: {
+          "Content-Type": "application/json",
+          
+        },
+        data: data
+      };
+
+      axios(config)
+      .then(function (response) {
+
+
+        if(response.data.Status =='Failed'){
+             console.log(response);
+              alert("Already Registered Please Sign-in !");
+              
+             
+     
+        }else{
+         console.log(response);
+         alert("login successful ");
+         history.replace('/home');
+        }
+        
+     
+       })
+     
+       .catch(function (error) {
+         console.log(error);
+       });
+
+       
+      
+     
+  }
 
 // this one !
 
@@ -710,33 +760,33 @@ else{
 
 
 
-function googleSignin(res) {
-       const googleresponse = {
-         name: res.profileObj.name,
-         email: res.profileObj.email,
-         provider:'google',
-         provider_id :res.googleId
+// function googleSignin(res) {
+//        const googleresponse = {
+//          name: res.profileObj.name,
+//          email: res.profileObj.email,
+//          provider:'google',
+//          provider_id :res.googleId
         
 
-};
+// };
   
-       axios.get('https://www.shopsmartcart.reflomsolutions.com/public/api/login', googleresponse).then((result) => {
+//        axios.get('https://www.shopsmartcart.reflomsolutions.com/public/api/login', googleresponse).then((result) => {
   
-         let responseJson = result;
+//          let responseJson = result;
   
   
-        //  sessionStorage.setItem("userData", JSON.stringify(result));
+//         //  sessionStorage.setItem("userData", JSON.stringify(result));
   
-       }).then(function (response) {
+//        }).then(function (response) {
 
-         setgoogleData({ googleData: response });
-         console.log(googleData)
+//          setgoogleData({ googleData: response });
+//          console.log(googleData)
        
         
   
   
-       })
-     }
+//        })
+//      }
 
      function googleSignin(res) {
  
@@ -794,10 +844,10 @@ function googleSignin(res) {
 
 const responseFacebook = (response) => {
 
-         console.log(response);
-         var res = response.profileObj;
+         console.log(response); 
+         var res = response.profileObj; 
          console.log(res);
-        // facebookSignin(response)
+        facebookSignin(res);
         
        }
 
@@ -884,9 +934,9 @@ const responseGoogle = (response) => {
              <FacebookLogin
               className="facebook"
               appId="3289839974459022"
-              callback={this.responseFacebook}
-              autoLoad={true}
-
+              fields="name,email,picture"  
+              autoLoad={false}  
+              callback={responseFacebook}
            />
            </center>
 
