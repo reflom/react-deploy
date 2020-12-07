@@ -623,65 +623,21 @@ else{
 
 }
 
-//  function facebookSignin(response)
-//  {
-//   var axios = require('axios');
-//   var FormData = require('form-data');
-//   var data = new FormData();
-//   data.append('name', response.name);
-//   data.append('email',response.email );
-//   data.append('provider',response.graphDomain);
-//   data.append('provider_id',response.id );
- 
-  
-//   var config = {
-//     method: 'post',
-//     url: 'https://www.shopsmartcart.reflomsolutions.com/public/api/register',
-//     headers: {
-//       "Content-Type": "application/json",
-     
-//     },
-//     data: data
-//   };
 
-//   axios(config)
-//   .then(function (response) {
-
-  
-//    if(response.data.Status =='Failed'){
-//         console.log(response);
-//          alert("INVALID EMAIL ID AND PASSWORD !!")
-        
-
-//    }else{
-//     console.log(response);
-//     alert("login successful ");
-//     history.replace('/home');
-//    }
-   
-
-//   })
-
-//   .catch(function (error) {
-//     console.log(error);
-//   });
-// }
-
-
-function facebookSignin(response){
+function facebookSignin(res){
   
   var FormData = require('form-data');
     var data = new FormData();
-      console.log(response.name);
-      console.log(response.email);
-      data.append('name',response.name);
-      data.append('email',response.email);
-      data.append('provider',response.graphDomain );
-      data.append('provider_id',response.id);
+      console.log(res.name);
+      console.log(res.email);
+      data.append('name',res.name);
+      data.append('email',res.email);
+      data.append('provider',res.graphDomain );
+      data.append('provider_id',res.id);
     
       var config = {
         method: 'post',
-        url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+response.id+'/'+response.name+'/'+response.email+'/'+response.graphDomain,
+        url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+res.id+'/'+res.name+'/'+res.email+'/'+res.graphDomain,
         headers: {
           "Content-Type": "application/json",
           
@@ -717,76 +673,9 @@ function facebookSignin(response){
      
   }
 
-// this one !
-
-
- 
 
 
 
-// function facebookSignin(res) 
-// {
-
-//   const responseFacebook = {
-//         name: res.name,
-//         email: res.email,
-//         provider: res.graphDomain,
-//         provider_id :res.userID,
-//         remember_token: res.accessToken
-//         //  token: res.facebookID,
-//        }
-  
-//      axios.post('https://shopsmartcart.reflomsolutions.com/public/api/login', responseFacebook)
-//          .then((result) => {
-//            let responseJson = result;
-//            console.log(result.data.name);
-//            alert("login Successfull");
-//           sessionStorage.setItem("userData", JSON.stringify(result));
-  
-  
-//          }).then(function (response) {
-  
-         
-//          setFacebookData({ facebookData: response });
-        
-//          console.log(facebookData);
-
-        
-//     })
-  
-// }
-
-
-
-
-
-// function googleSignin(res) {
-//        const googleresponse = {
-//          name: res.profileObj.name,
-//          email: res.profileObj.email,
-//          provider:'google',
-//          provider_id :res.googleId
-        
-
-// };
-  
-//        axios.get('https://www.shopsmartcart.reflomsolutions.com/public/api/login', googleresponse).then((result) => {
-  
-//          let responseJson = result;
-  
-  
-//         //  sessionStorage.setItem("userData", JSON.stringify(result));
-  
-//        }).then(function (response) {
-
-//          setgoogleData({ googleData: response });
-//          console.log(googleData)
-       
-        
-  
-  
-//        })
-//      }
 
      function googleSignin(res) {
  
@@ -837,12 +726,7 @@ function facebookSignin(response){
 
 
      
-   
-
-
-
-
-const responseFacebook = (response) => {
+  const responseFacebook = (response) => {
 
          console.log(response); 
          var res = response.profileObj; 
@@ -852,22 +736,18 @@ const responseFacebook = (response) => {
        }
 
 
-const responseGoogle = (response) => {
+const responseGoogle = (response) => 
+{
 
-              console.log(response);
-              console.log(response);
-              var res = response.profileObj;
-              googleSignin(res);
+  console.log(response);
+  console.log(response);
+  var res = response.profileObj;
+  googleSignin(res);
         
-        
-  }
+}
 
 
-
-
-
-
-  return(
+return(
     <>
     
      <h4 className='text-center' style={{ color: '#424242', font: '#424242' }}><h2> Shop Smart Cart</h2></h4>

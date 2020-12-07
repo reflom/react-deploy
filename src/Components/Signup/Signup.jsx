@@ -593,65 +593,21 @@ alert("invalid email")
      });
      
   }
-
-
 }
 
 
-// function facebookSignin(res) 
-// {
- 
-      
-//   // const responseFacebook = {
-//   //        name: res.name,
-//   //        email: res.email,
-//   //       provider: 'Facebook',
-//   //       provider_id: res.facebookID,
-//   //      }
-
-//        var FormData = require('form-data');
-//        var data = new FormData();
-           
-//             data.append('name',res.name);
-//             data.append('email',res.email);
-//             data.append('provider',res.facebookID );
-//             data.append('provider_id',res.facebookID);
+function facebookSignin(res){
   
-//      axios.post('https://www.shopsmartcart.reflomsolutions.com/public/api/register', data)
-         
-//      .then((result) => {
-//            let responseJson = result;
-//            console.log(result.data.name);
-//            alert("data");
-//           //  sessionStorage.setItem("userData", JSON.stringify(result));
-  
-  
-//          }).then(function (response) {
-  
-        
-//          setFacebookData({ facebookData: response });
-//          console.log(facebookData);
-//          history.replace('/home');
-         
-  
-//          })
-  
-// }
-
-function facebookSignin(response){
-  
-        var FormData = require('form-data');
-          var data = new FormData();
-          var email="kkshshdhaskhh@gmail.com";
-       console.log(response.name);
-            data.append('name',response.name);
-            // data.append('email','kkshshdhaskhh@gmail.com');
-            data.append('provider',response.graphDomain );
-            data.append('provider_id',response.id);
+            var FormData = require('form-data');
+            var data = new FormData();
+            data.append('name',res.name);
+            data.append('email',res.email);
+            data.append('provider',res.graphDomain );
+            data.append('provider_id',res.id);
           
             var config = {
               method: 'post',
-              url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+response.id+'/'+response.name+'/'+email+'/'+response.graphDomain,
+              url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+res.id+'/'+res.name+'/'+res.email+'/'+res.graphDomain,
               headers: {
                 "Content-Type": "application/json",
                 
@@ -666,10 +622,7 @@ function facebookSignin(response){
               if(response.data.Status =='Failed'){
                    console.log(response);
                     alert("Already Registered Please Sign-in !");
-                    
-                   
-           
-              }else{
+                }else{
                console.log(response);
                alert("login successful ");
                history.replace('/home');
@@ -688,40 +641,6 @@ function facebookSignin(response){
         }
 
 
-
-
-
-
-
-
-
-
-
-
-// function googleSignin(res) {
-//        const googleresponse = {
-//          Name: res.profileObj.name,
-//          email: res.profileObj.email,
-//          token: res.googleId,
-//          ProviderId: 'Google'
-  
-//        };
-  
-//        axios.post('https://www.shopsmartcart.reflomsolutions.com/public/api/register', googleresponse).then((result) => {
-  
-//          let responseJson = result;
-  
-  
-//          sessionStorage.setItem("userData", JSON.stringify(result));
-  
-//        }).then(function (response) {
-
-//          setgoogleData({ googleData: response });
-//          console.log(googleData)
-//          history.replace('/home');
-        
-// })
-//      }
 
 function googleSignin(res) {
  
@@ -775,17 +694,19 @@ function googleSignin(res) {
 
 const responseFacebook = (response) => {
 
-  console.log(response);
-  facebookSignin(response);
+  console.log(response); 
+  var res = response.profileObj; 
+  console.log(res);
+  facebookSignin(res);
  
 }
 
 
 const responseGoogle = (response) => {
 
-        console.log(response);
-        var res = response.profileObj;
-         googleSignin(res);
+  console.log(response);
+  var res = response.profileObj;
+  googleSignin(res);
  
  
 }
@@ -886,6 +807,7 @@ const responseGoogle = (response) => {
             className="facebook"
             appId="3289839974459022"
             autoLoad={false}
+            fields="name,email,picture"  
             callback={responseFacebook}
           />
 
@@ -896,15 +818,12 @@ const responseGoogle = (response) => {
 
           <GoogleLogin
             className="google-btn"
-            clientId='845602509852-pook2otv32c3pjj6c2l6dajp9np9qsl3.apps.googleusercontent.com'
+            clientId='123114853806-fhk1pf929tkmo9oamihtit5r88jpvl5a.apps.googleusercontent.com'
             buttonText="Continue With Google"
             size='small'
             onSuccess={responseGoogle}
             onFailure={responseGoogle}
-            cookiePolicy={'single_host_origin'}
-
-
-          />
+        />
         </center>
 
 
