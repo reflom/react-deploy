@@ -614,7 +614,7 @@ function facebookSignin(response){
           
             var config = {
               method: 'post',
-              url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+response.id+'/'+response.name+'/'+response.email+'/'+response.graphDomain,
+              url:  `https://shopsmartcart.reflomsolutions.com/public/createUser_facebook/`+response.id+'/'+response.name+'/'+response.email+'/'+response.graphDomain,
               headers: {
                 "Content-Type": "application/json",
                 
