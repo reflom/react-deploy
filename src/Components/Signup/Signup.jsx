@@ -599,17 +599,22 @@ alert("invalid email")
 function facebookSignin(response){
   console.log("function called",response);
 
+
+  console.log("name", response.name);
+  console.log("email", response.email);
+  console.log("domain",response.graphDomain);
+  console.log("id",response.id);
   
             var FormData = require('form-data');
             var data = new FormData();
-            data.append('name',response.profileObj.name);
-            data.append('email',response.profileObj.email);
-            data.append('provider',response.profileObj.graphDomain );
-            data.append('provider_id',response.profileObj.id);
+            data.append('name',response.name);
+            data.append('email',response.email);
+            data.append('provider',response.graphDomain );
+            data.append('provider_id',response.id);
           
             var config = {
               method: 'post',
-              url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+res.id+'/'+res.name+'/'+res.email+'/'+res.graphDomain,
+              url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+response.id+'/'+response.name+'/'+response.email+'/'+response.graphDomain,
               headers: {
                 "Content-Type": "application/json",
                 
