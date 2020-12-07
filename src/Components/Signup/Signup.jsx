@@ -596,14 +596,14 @@ alert("invalid email")
 }
 
 
-function facebookSignin(res){
+function facebookSignin(response){
   
             var FormData = require('form-data');
             var data = new FormData();
-            data.append('name',res.name);
-            data.append('email',res.email);
-            data.append('provider',res.graphDomain );
-            data.append('provider_id',res.id);
+            data.append('name',response.profileObj.name);
+            data.append('email',response.profileObj.email);
+            data.append('provider',response.profileObj.graphDomain );
+            data.append('provider_id',response.profileObj.id);
           
             var config = {
               method: 'post',
@@ -695,9 +695,8 @@ function googleSignin(res) {
 const responseFacebook = (response) => {
 
   console.log(response); 
-  var res = response.profileObj; 
-  facebookSignin(res);
- 
+  facebookSignin(response);
+ console.log("yes it has changes");
 }
 
 

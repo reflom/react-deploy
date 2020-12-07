@@ -624,20 +624,20 @@ else{
 }
 
 
-function facebookSignin(res){
+function facebookSignin(response){
   
-  var FormData = require('form-data');
-    var data = new FormData();
-      console.log(res.name);
-      console.log(res.email);
-      data.append('name',res.name);
-      data.append('email',res.email);
-      data.append('provider',res.graphDomain );
-      data.append('provider_id',res.id);
+     var FormData = require('form-data');
+     var data = new FormData();
+      console.log(response.profileObj.name);
+      console.log(response.profileObj.email);
+      data.append('name',response.profileObj.name);
+      data.append('email',response.profileObj.email);
+      data.append('provider',response.profileObj.graphDomain );
+      data.append('provider_id',response.profileObj.id);
     
       var config = {
         method: 'post',
-        url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+res.id+'/'+res.name+'/'+res.email+'/'+res.graphDomain,
+        url:  `https://shopsmartcart.reflomsolutions.com/public/createuser/`+response.profileObj.id+'/'+response.profileObj.name+'/'+response.profileObj.email+'/'+response.profileObj.graphDomain,
         headers: {
           "Content-Type": "application/json",
           
@@ -729,8 +729,7 @@ function facebookSignin(res){
   const responseFacebook = (response) => {
 
          console.log(response); 
-         var res = response.profileObj; 
-         facebookSignin(res);
+        facebookSignin(response);
         
        }
 
