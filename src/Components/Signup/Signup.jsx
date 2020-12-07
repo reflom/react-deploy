@@ -597,6 +597,8 @@ alert("invalid email")
 
 
 function facebookSignin(response){
+  console.log("function called",response);
+
   
             var FormData = require('form-data');
             var data = new FormData();
@@ -695,8 +697,9 @@ function googleSignin(res) {
 const responseFacebook = (response) => {
 
   console.log(response); 
+  console.log("yes it has changes");
   facebookSignin(response);
- console.log("yes it has changes");
+
 }
 
 
