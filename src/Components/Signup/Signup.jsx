@@ -696,7 +696,6 @@ const responseFacebook = (response) => {
 
   console.log(response); 
   var res = response.profileObj; 
-  console.log(res);
   facebookSignin(res);
  
 }

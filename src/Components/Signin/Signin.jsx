@@ -730,8 +730,7 @@ function facebookSignin(res){
 
          console.log(response); 
          var res = response.profileObj; 
-         console.log(res);
-        facebookSignin(res);
+         facebookSignin(res);
         
        }
 
